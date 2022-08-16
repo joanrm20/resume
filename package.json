@@ -1,0 +1,24 @@
+{
+  "name": "resume-jose",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "jsonresume-theme-even": "0.17.0",
+    "resumed": "1.0.3"
+  },
+  "scripts": {
+    "render": "resumed render -o public/resume.html",
+    "validate": "resumed validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanrm20/resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanrm20/resume/issues"
+  },
+  "homepage": "https://github.com/joanrm20/resume#readme",
+  "description": "Jose Ramirez Resume"
+}
