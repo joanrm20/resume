@@ -1,0 +1,285 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Jose Ramirez Mora",
+    "label": "Staff Frontend Engineer",
+    "image": "https://media-exp1.licdn.com/dms/image/C4E03AQFlCjDqMGNFfQ/profile-displayphoto-shrink_400_400/0/1597277246565?e=1665619200&v=beta&t=B8jlmQVW2WW1vHwNVzu4uEmdn0wlitnzJhuqYy7k8j4",
+    "email": "jo.chicho@gmail.com",
+    "phone": "+(31) 633189657",
+    "summary": "I'm a Staff frontend engineer, working with multiple teams and tech leads to build performant and maintainable web applications. I deeply care about long-term solutions with great usability, quality, performance and creating an amazing tech culture. I enjoy being challenged and engaging with projects that require me to work outside my knowledge set as well as provide suitable solutions. I strongly believe in constant educational growth through online resources.",
+    "location": {
+      "city": "Amsterdam Area",
+      "countryCode": "NL",
+      "region": "North Holland"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "joanrm20",
+        "url": "https://www.linkedin.com/in/joanrm20"
+      },
+      {
+        "network": "Github",
+        "username": "joanrm20",
+        "url": "https://github.com/joanrm20"
+      },
+      {
+        "network": "Twitter",
+        "username": "joanrm20",
+        "url": "https://twitter.com/Joanrm20"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "DAZN",
+      "location": "Amsterdam, NL",
+      "description": "Sports streaming and video on demand",
+      "position": "Staff Frontend Engineer",
+      "url": "https://dazn.com",
+      "startDate": "2022-04-01",
+      "highlights": [
+        "An active contributor to ongoing initiatives of a team of 10+ engineers.",
+        "Participate in multiple Engineering and Product alignment meetings.",
+        "FFacilitate multiple team meetings to ensure alignment and communication for ongoing projects and initiatives.",
+        "Design and contribute to CI solution for a Monorepo project which smartly runs only the changed packages and services ensuring a fast and reliable CI/CD pipeline.",
+        "Encourage and promote the use of the design systems library to improve the quality of the codebase, brand standards and user experience."
+      ]
+    },
+    {
+      "name": "DAZN",
+      "location": "Amsterdam, NL",
+      "description": "Sports streaming and video on demand",
+      "position": "Senior Frontend Engineer",
+      "url": "https://dazn.com",
+      "startDate": "2021-05-01",
+      "endDate": "2022-03-01",
+      "highlights": [
+        "Deliver multiple features for the DAZN Landing Pages micro frontend, using React, Typescript, and CSS-in-JS.",
+        "Create Design tokens naming standardization proposal for the DAZN Design System.",
+        "Lead and contribute to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.",
+        "Present in the Frontend Guild and tech council, sharing knowledge about frontend technologies and different ongoing projects.",
+        "Lead and contribute to a new library to standardize formatting dates, times and currencies across multiple teams and projects ensuring consistency."
+      ]
+    },
+    {
+      "name": "Travix",
+      "location": "Amsterdam, NL",
+      "description": "Online travel agency",
+      "position": "Frontend Tech Lead",
+      "url": "https://www.travix.com/",
+      "startDate": "2018-12-01",
+      "endDate": "2021-12-01",
+      "summary": "",
+      "highlights": [
+        "Organize collaboration meetings between multiple frontend teams.",
+        "Active participant of the performance guild.",
+        "Create multiple proposals for different upcoming and ongoing technical challenges.",
+        "Design a responsive desktop solution for the new platform.",
+        "Mentored individuals in and outside the company and technically led a product team through major development cycles."
+      ]
+    },
+    {
+      "name": "Travix",
+      "location": "Amsterdam, NL",
+      "description": "Online travel agency",
+      "position": "Senior Frontend Engineer",
+      "url": "https://www.travix.com/",
+      "startDate": "2018-12-01",
+      "endDate": "2021-12-01",
+      "summary": "",
+      "highlights": [
+        "Designed backend for frontend, adopted by the entire platform.",
+        "Creator of a common internal logging library for server and client-side aligning logging standards and capabilities across the company.",
+        "Contributed to a new architecture development of a dynamic frontend platform and design system in React and Typescript."
+      ]
+    },
+    {
+      "name": "Travix",
+      "location": "Amsterdam, NL",
+      "description": "Online travel agency",
+      "position": "Frontend Engineer",
+      "url": "https://www.travix.com/",
+      "startDate": "2018-03-01",
+      "endDate": "2019-03-01",
+      "summary": "",
+      "highlights": [
+        "Setup new frontend observability metrics.",
+        "Maintained legacy observability services written in golang.",
+        "Part of a product team working on cross-sell products for the company."
+      ]
+    },
+    {
+      "name": "First Factory",
+      "location": "Heredia, CRC",
+      "description": "Nearshore software development.",
+      "position": "Full Stack Team Lead",
+      "url": "https://firstfactory.com/",
+      "startDate": "2013-06-01",
+      "endDate": "2018-12-01",
+      "highlights": [
+        "Lead a team internally for multiple clients based in NYC.",
+        "Collaboration and decision in web apps architecture for multiple projects",
+        "Deliver multiple frontend projects in React, Angular and Nodejs.",
+        "Mentor engineers spanning multiple teams and projects.",
+        "Create multiple prototypes for mobile and web apps.",
+        "Contribute to practice management software for healthcare written in Angular 1.x and C#."
+      ]
+    },
+    {
+      "name": "GBSYS",
+      "location": "Curridabat, CRC",
+      "description": "Technology consultancy company.",
+      "position": "Software Engineer",
+      "url": "https://www.gbsys.com/?lang=en",
+      "startDate": "2012-04-01",
+      "endDate": "2013-06-01",
+      "highlights": [
+        "Contributed to a web application in ASP.NET(C#).",
+        "Contributed to Titanium Appcelerator mobile application."
+      ]
+    },
+    {
+      "name": "3WV",
+      "location": "San Jose, CRC",
+      "description": "Web marketing agency.",
+      "position": "Software Engineer",
+      "url": "http://www.3wv.net/",
+      "startDate": "2010-10-01",
+      "endDate": "2012-04-01",
+      "highlights": [
+        "Contributed to multiple web applications in APS.NET.",
+        "Contributed to desktop application in C# .NET."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Latinoamerica de Ciencia y Tecnologia",
+      "url": "https://www.ulacit.ac.cr/",
+      "area": "Software Engineering",
+      "studyType": "Degree (pending graduation qualifies)",
+      "startDate": "2011-06-01",
+      "endDate": "2014-01-01"
+    },
+    {
+      "institution": "Universidad Fidelitas",
+      "url": "https://ufidelitas.ac.cr/",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2008-04-01",
+      "endDate": "2011-04-01"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Travix Talent Trail Winner 2019",
+      "date": "2019-10-01",
+      "awarder": "Travix"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Typescript",
+        "React",
+        "Redux",
+        "styled-components",
+        "Next.js",
+        "Babel",
+        "Webpack",
+        "Eslint",
+        "Storybook",
+        "Jest",
+        "Node.js",
+        "npm"
+      ]
+    },
+    {
+      "name": "Other",
+      "keywords": [
+        "Git",
+        "GHA",
+        "Docker",
+        "Terraform",
+        "React Native",
+        "Python"
+      ]
+    },
+    {
+      "name": "Personal",
+      "keywords": [
+        "Communication", 
+        "Analysis and Creativity",
+        "Team Player", 
+        "Commitment",
+        "Dedication"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full professional proficiency"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "User experience",
+      "keywords": [
+        "Usability",
+        "Accessibility",
+        "Inclusion",
+        "Semantics",
+        "Performance"
+      ]
+    },
+    {
+      "name": "Online Learning",
+      "keywords": [
+        "Frontend Masters",
+        "Coursera"
+      ]
+    },
+    {
+      "name": "Media",
+      "keywords": [
+        "Music",
+        "Movies",
+        "Anime"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Storybook Paddings Addon",
+      "description": "A Storybook addon to add different paddings to your preview. Useful for checking how components behave when surrounded by white space.",
+      "keywords": [
+        "Storybook",
+        "Addon",
+        "React",
+        "Design",
+        "JSX"
+      ],
+      "startDate": "2020-06-10",
+      "url": "https://github.com/rbardini/storybook-addon-paddings",
+      "roles": [
+        "Contributor"
+      ],
+      "type": "addon"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00"
+  }
+}
