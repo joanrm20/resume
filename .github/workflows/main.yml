@@ -19,4 +19,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run render
+        run: |
+          mkdir -p public
+          npm run render
+
