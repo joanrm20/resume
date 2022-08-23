@@ -41,7 +41,7 @@
       "highlights": [
         "An active contributor to ongoing initiatives of a team of 10+ engineers.",
         "Participate in multiple Engineering and Product alignment meetings.",
-        "FFacilitate multiple team meetings to ensure alignment and communication for ongoing projects and initiatives.",
+        "Facilitate multiple team meetings to ensure alignment and communication for ongoing projects and initiatives.",
         "Design and contribute to CI solution for a Monorepo project which smartly runs only the changed packages and services ensuring a fast and reliable CI/CD pipeline.",
         "Encourage and promote the use of the design systems library to improve the quality of the codebase, brand standards and user experience."
       ]
@@ -237,8 +237,6 @@
       "keywords": [
         "Usability",
         "Accessibility",
-        "Inclusion",
-        "Semantics",
         "Performance"
       ]
     },
