@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Jose Ramirez Mora</title>
+      <meta name="description" content="I&#x27;m a Staff frontend engineer building performant and maintainable web applications. I deeply care about long-term solutions with great usability, quality, performance and creating an amazing tech culture. I enjoy being challenged and engaging with projects that require me to work outside my knowledge set as well as provide suitable solutions. I strongly believe in constant educational growth through online resources.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+    <style>:root {
+  color-scheme: light dark;
+
+  --color-background: #ffffff; /* White */
+  --color-muted: #f3f4f5; /* Light Gray 200 */
+  --color-primary: #191e23; /* Dark Gray 900 */
+  --color-secondary: #6c7781; /* Dark Gray 300 */
+  --color-accent: #ffb900; /* Accent Yellow */
+  --color-link: #46b450; /* Accent Green */
+
+  --scale-ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--scale-ratio));
+  --scale2: calc(var(--scale1) * var(--scale-ratio));
+  --scale3: calc(var(--scale2) * var(--scale-ratio));
+  --scale4: calc(var(--scale3) * var(--scale-ratio));
+  --scale5: calc(var(--scale4) * var(--scale-ratio));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #191e23; /* Dark Gray 900 */
+    --color-muted: #23282d; /* Dark Gray 800 */
+    --color-primary: #fbfbfc; /* Light Gray 100 */
+    --color-secondary: #ccd0d4; /* Light Gray 700 */
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-primary);
+  display: grid;
+  font: 1em/1.5 Lato, sans-serif;
+  gap: 2em;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [main-start side-start]
+    minmax(min-content, 12em)
+    [side-end content-start]
+    minmax(min-content, 36em)
+    [main-end content-end]
+    1fr
+    [full-end];
+  grid-template-rows: auto [content] 0;
+  margin-bottom: 4em;
+}
+
+body::before {
+  content: '';
+  grid-column: full;
+  grid-row: content;
+}
+
+ol,
+ul {
+  padding-left: 1em;
+}
+
+:not(.icon-list, .tag-list) > li + li {
+  margin-top: 0.4em;
+}
+
+li::marker,
+.network {
+  color: var(--color-secondary);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:focus,
+a:hover {
+  color: var(--color-accent);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+}
+
+h2 {
+  color: var(--color-secondary);
+  font-size: var(--scale4);
+}
+
+h3 {
+  color: var(--color-accent);
+  font-size: var(--scale3);
+  grid-column: side;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: var(--scale2);
+}
+
+h5 {
+  font-size: var(--scale1);
+}
+
+h6 {
+  font-size: var(--scale0);
+}
+
+blockquote {
+  border-left: 0.2em solid var(--color-muted);
+  padding-left: 1em;
+}
+
+cite {
+  color: var(--color-secondary);
+  font-style: inherit;
+}
+
+cite::before {
+  content: '— ';
+}
+
+svg {
+  margin-right: 0.2em;
+  vertical-align: -0.2em;
+}
+
+.masthead {
+  background: var(--color-muted);
+  display: inherit;
+  gap: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  padding: 4em 0;
+  text-align: center;
+}
+
+.masthead > *,
+section {
+  grid-column: main;
+}
+
+.masthead > img {
+  border-radius: 50%;
+  margin: 0 auto;
+  max-width: 12em;
+}
+
+article > * + *,
+blockquote > * + * {
+  margin-top: 0.6em;
+}
+
+.meta {
+  color: var(--color-secondary);
+}
+
+.stack {
+  display: grid;
+  gap: 1.5em;
+}
+
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1em;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.grid-list {
+  display: grid;
+  gap: 1em;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  list-style: none;
+  padding: 0;
+}
+
+.tag-list > li {
+  background: var(--color-muted);
+  border-radius: 0.2em;
+  padding: 0.2em 0.6em;
+}
+
+.bullet-item:not(:first-child)::before {
+  content: '· ';
+  margin: 0 0.2em;
+}
+
+@media print, (min-width: 48em) {
+  h3 {
+    text-align: right;
+    margin-bottom: inherit;
+  }
+
+  .masthead {
+    text-align: inherit;
+  }
+
+  .masthead > *,
+  section {
+    grid-column: content;
+  }
+
+  .masthead img {
+    grid-column: side;
+    grid-row: span 2;
+    max-width: 100%;
+  }
+
+  section {
+    display: contents;
+  }
+
+  .icon-list {
+    flex-direction: column;
+  }
+
+  .grid-list {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc((100% - 1em) / 2), 1fr)
+    );
+  }
+}
+</style>
+  </head>
+  <body>
+      <header class="masthead">
+          <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFlCjDqMGNFfQ/profile-displayphoto-shrink_400_400/0/1597277246565?e&#x3D;1665619200&amp;v&#x3D;beta&amp;t&#x3D;B8jlmQVW2WW1vHwNVzu4uEmdn0wlitnzJhuqYy7k8j4" alt="">
+        <div>
+            <h1>Jose Ramirez Mora</h1>
+            <h2>Staff Frontend Engineer</h2>
+        </div>
+          <article>
+            <p>I'm a Staff frontend engineer building performant and maintainable web applications. I deeply care about long-term solutions with great usability, quality, performance and creating an amazing tech culture. I enjoy being challenged and engaging with projects that require me to work outside my knowledge set as well as provide suitable solutions. I strongly believe in constant educational growth through online resources.</p>
+          </article>
+        <ul class="icon-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Amsterdam Area, Netherlands
+              </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:jo.chicho@gmail.com">jo.chicho@gmail.com</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+31633189657">+(31) 633189657</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  <a href="https://www.linkedin.com/in/joanrm20">joanrm20</a>
+                <span class="network">(LinkedIn)</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <a href="https://github.com/joanrm20">joanrm20</a>
+                <span class="network">(Github)</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  <a href="https://twitter.com/Joanrm20">joanrm20</a>
+                <span class="network">(Twitter)</span>
+            </li>
+        </ul>
+      </header>
+
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <h4>Staff Frontend Engineer</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://dazn.com">DAZN</a></strong>
+                      <span class="bullet-item">Sports streaming and video on demand</span>
+                  </div>
+                  <div>
+                    <time datetime="2022-04-01">Apr 2022</time> –
+                    Present
+                  </div>
+                    <div>Amsterdam, NL</div>
+                </div>
+              </header>
+                <ul>
+                    <li><p>An active contributor to ongoing initiatives of a team of 10+ engineers.</p></li>
+                    <li><p>Participate in multiple Engineering and Product alignment meetings.</p></li>
+                    <li><p>Facilitate multiple team meetings to ensure alignment and communication for ongoing projects and initiatives.</p></li>
+                    <li><p>Design and contribute to CI solution for a Monorepo project which smartly runs only the changed packages and services ensuring a fast and reliable CI/CD pipeline.</p></li>
+                    <li><p>Encourage and promote the use of the design systems library to improve the quality of the codebase, brand standards and user experience.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Senior Frontend Engineer</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://dazn.com">DAZN</a></strong>
+                      <span class="bullet-item">Sports streaming and video on demand</span>
+                  </div>
+                  <div>
+                    <time datetime="2021-05-01">May 2021</time> –
+                    <time datetime="2022-03-01">Mar 2022</time>
+                  </div>
+                    <div>Amsterdam, NL</div>
+                </div>
+              </header>
+                <ul>
+                    <li><p>Deliver multiple features for the DAZN Landing Pages micro frontend, using React, Typescript, and CSS-in-JS.</p></li>
+                    <li><p>Create Design tokens naming standardization proposal for the DAZN Design System.</p></li>
+                    <li><p>Lead and contribute to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.</p></li>
+                    <li><p>Present in the Frontend Guild and tech council, sharing knowledge about frontend technologies and different ongoing projects.</p></li>
+                    <li><p>Lead and contribute to a new library to standardize formatting dates, times and currencies across multiple teams and projects ensuring consistency.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Frontend Tech Lead</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://www.travix.com/">Travix</a></strong>
+                      <span class="bullet-item">Online travel agency</span>
+                  </div>
+                  <div>
+                    <time datetime="2018-12-01">Dec 2018</time> –
+                    <time datetime="2021-12-01">Dec 2021</time>
+                  </div>
+                    <div>Amsterdam, NL</div>
+                </div>
+              </header>
+                
+                <ul>
+                    <li><p>Organize collaboration meetings between multiple frontend teams.</p></li>
+                    <li><p>Active participant of the performance guild.</p></li>
+                    <li><p>Create multiple proposals for different upcoming and ongoing technical challenges.</p></li>
+                    <li><p>Design a responsive desktop solution for the new platform.</p></li>
+                    <li><p>Mentored individuals in and outside the company and technically led a product team through major development cycles.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Senior Frontend Engineer</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://www.travix.com/">Travix</a></strong>
+                      <span class="bullet-item">Online travel agency</span>
+                  </div>
+                  <div>
+                    <time datetime="2018-12-01">Dec 2018</time> –
+                    <time datetime="2021-12-01">Dec 2021</time>
+                  </div>
+                    <div>Amsterdam, NL</div>
+                </div>
+              </header>
+                
+                <ul>
+                    <li><p>Designed backend for frontend, adopted by the entire platform.</p></li>
+                    <li><p>Creator of a common internal logging library for server and client-side aligning logging standards and capabilities across the company.</p></li>
+                    <li><p>Contributed to a new architecture development of a dynamic frontend platform and design system in React and Typescript.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Frontend Engineer</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://www.travix.com/">Travix</a></strong>
+                      <span class="bullet-item">Online travel agency</span>
+                  </div>
+                  <div>
+                    <time datetime="2018-03-01">Mar 2018</time> –
+                    <time datetime="2019-03-01">Mar 2019</time>
+                  </div>
+                    <div>Amsterdam, NL</div>
+                </div>
+              </header>
+                
+                <ul>
+                    <li><p>Setup new frontend observability metrics.</p></li>
+                    <li><p>Maintained legacy observability services written in golang.</p></li>
+                    <li><p>Part of a product team working on cross-sell products for the company.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Full Stack Team Lead</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://firstfactory.com/">First Factory</a></strong>
+                      <span class="bullet-item">Nearshore software development.</span>
+                  </div>
+                  <div>
+                    <time datetime="2013-06-01">Jun 2013</time> –
+                    <time datetime="2018-12-01">Dec 2018</time>
+                  </div>
+                    <div>Heredia, CRC</div>
+                </div>
+              </header>
+                <ul>
+                    <li><p>Lead a team internally for multiple clients based in NYC.</p></li>
+                    <li><p>Collaboration and decision in web apps architecture for multiple projects</p></li>
+                    <li><p>Deliver multiple frontend projects in React, Angular and Nodejs.</p></li>
+                    <li><p>Mentor engineers spanning multiple teams and projects.</p></li>
+                    <li><p>Create multiple prototypes for mobile and web apps.</p></li>
+                    <li><p>Contribute to practice management software for healthcare written in Angular 1.x and C#.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Software Engineer</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="https://www.gbsys.com/?lang&#x3D;en">GBSYS</a></strong>
+                      <span class="bullet-item">Technology consultancy company.</span>
+                  </div>
+                  <div>
+                    <time datetime="2012-04-01">Apr 2012</time> –
+                    <time datetime="2013-06-01">Jun 2013</time>
+                  </div>
+                    <div>Curridabat, CRC</div>
+                </div>
+              </header>
+                <ul>
+                    <li><p>Contributed to a web application in ASP.NET(C#).</p></li>
+                    <li><p>Contributed to Titanium Appcelerator mobile application.</p></li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <h4>Software Engineer</h4>
+                <div class="meta">
+                  <div>
+                    <strong><a href="http://www.3wv.net/">3WV</a></strong>
+                      <span class="bullet-item">Web marketing agency.</span>
+                  </div>
+                  <div>
+                    <time datetime="2010-10-01">Oct 2010</time> –
+                    <time datetime="2012-04-01">Apr 2012</time>
+                  </div>
+                    <div>San Jose, CRC</div>
+                </div>
+              </header>
+                <ul>
+                    <li><p>Contributed to multiple web applications in APS.NET.</p></li>
+                    <li><p>Contributed to desktop application in C# .NET.</p></li>
+                </ul>
+            </article>
+        </div>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <h4><a href="https://www.ulacit.ac.cr/">Universidad Latinoamerica de Ciencia y Tecnologia</a></h4>
+                <div class="meta">
+                    <strong>Software Engineering</strong>
+                  <div>
+                    <time datetime="2011-06-01">Jun 2011</time> –
+                    <time datetime="2014-01-01">Jan 2014</time>
+                  </div>
+                </div>
+              </header>
+                <p>Degree (pending graduation qualifies)</p>
+            </article>
+            <article>
+              <header>
+                <h4><a href="https://ufidelitas.ac.cr/">Universidad Fidelitas</a></h4>
+                <div class="meta">
+                    <strong>Computer Science</strong>
+                  <div>
+                    <time datetime="2008-04-01">Apr 2008</time> –
+                    <time datetime="2011-04-01">Apr 2011</time>
+                  </div>
+                </div>
+              </header>
+                <p>Bachelor</p>
+            </article>
+        </div>
+      </section>
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <h4><a href="https://github.com/rbardini/storybook-addon-paddings">Storybook Paddings Addon</a></h4>
+                <div class="meta">
+                  <div>
+                      <strong>Contributor</strong>
+                  </div>
+                  <div>
+                    <time datetime="2020-06-10">Jun 2020</time> –
+                    Present
+                  </div>
+                </div>
+              </header>
+                <p>A Storybook addon to add different paddings to your preview. Useful for checking how components behave when surrounded by white space.</p>
+            </article>
+        </div>
+      </section>
+      <section id="awards">
+        <h3>Awards</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <h4>Travix Talent Trail Winner 2019</h4>
+                <div class="meta">
+                    <div>
+                      Awarded by <strong>Travix</strong>
+                    </div>
+                    <time datetime="2019-10-01">Oct 2019</time>
+                </div>
+              </header>
+            </article>
+        </div>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+            <div>
+                <h4>Web Development</h4>
+                <ul class="tag-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Typescript</li>
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>styled-components</li>
+                    <li>Next.js</li>
+                    <li>Babel</li>
+                    <li>Webpack</li>
+                    <li>Eslint</li>
+                    <li>Storybook</li>
+                    <li>Jest</li>
+                    <li>Node.js</li>
+                    <li>npm</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Other</h4>
+                <ul class="tag-list">
+                    <li>Git</li>
+                    <li>GHA</li>
+                    <li>Docker</li>
+                    <li>Terraform</li>
+                    <li>React Native</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Personal</h4>
+                <ul class="tag-list">
+                    <li>Communication</li>
+                    <li>Analysis and Creativity</li>
+                    <li>Team Player</li>
+                    <li>Commitment</li>
+                    <li>Dedication</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+      <section id="languages">
+        <h3>Languages</h3>
+        <div class="grid-list">
+            <div>
+                <h4>English</h4>
+              Full professional proficiency
+            </div>
+            <div>
+                <h4>Spanish</h4>
+              Native speaker
+            </div>
+        </div>
+      </section>
+      <section id="interests">
+        <h3>Interests</h3>
+        <div class="grid-list">
+            <div>
+                <h4>User experience</h4>
+                <ul class="tag-list">
+                    <li>Usability</li>
+                    <li>Accessibility</li>
+                    <li>Performance</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Online Learning</h4>
+                <ul class="tag-list">
+                    <li>Frontend Masters</li>
+                    <li>Coursera</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Media</h4>
+                <ul class="tag-list">
+                    <li>Music</li>
+                    <li>Movies</li>
+                    <li>Anime</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+  </body>
+</html>
