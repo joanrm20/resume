@@ -3,7 +3,7 @@
   "basics": {
     "name": "Jose Ramirez Mora",
     "label": "Staff Frontend Engineer",
-    "image": "https://media-exp1.licdn.com/dms/image/C4E03AQFlCjDqMGNFfQ/profile-displayphoto-shrink_400_400/0/1597277246565?e=1665619200&v=beta&t=B8jlmQVW2WW1vHwNVzu4uEmdn0wlitnzJhuqYy7k8j4",
+    "image": "https://avatars.githubusercontent.com/u/4033088?v=4",
     "email": "jo.chicho@gmail.com",
     "phone": "+(31) 633189657",
     "summary": "I'm a Staff frontend engineer building performant and maintainable web applications. I deeply care about long-term solutions with great usability, quality, performance and creating an amazing tech culture. I enjoy being challenged and engaging with projects that require me to work outside my knowledge set as well as provide suitable solutions. I strongly believe in constant educational growth through online resources.",
@@ -40,10 +40,10 @@
       "startDate": "2022-04-01",
       "highlights": [
         "An active contributor to ongoing initiatives of a team of 10+ engineers.",
-        "Participate in multiple Engineering and Product alignment meetings.",
-        "Facilitate multiple team meetings to ensure alignment and communication for ongoing projects and initiatives.",
+        "Participate in multiple Engineering and Product, providing tech perspective and vision ensuring alignment and communication for ongoing projects and initiatives.",
         "Design and contribute to CI solution for a Monorepo project which smartly runs only the changed packages and services ensuring a fast and reliable CI/CD pipeline.",
-        "Encourage and promote the use of the design systems library to improve the quality of the codebase, brand standards and user experience."
+        "Encourage and promote the design system library as a way of separating concerns from business logic, improve brand standards and user experience.",
+        "Contribute to process improvements and automation of multiple cross-team libraries."
       ]
     },
     {
@@ -213,9 +213,9 @@
     {
       "name": "Personal",
       "keywords": [
-        "Communication", 
+        "Communication",
         "Analysis and Creativity",
-        "Team Player", 
+        "Team Player",
         "Commitment",
         "Dedication"
       ]
