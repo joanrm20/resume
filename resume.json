@@ -39,10 +39,10 @@
       "url": "https://dazn.com",
       "startDate": "2022-04-01",
       "highlights": [
-        "An active contributor to ongoing initiatives of a team of 10+ engineers.",
-        "Participate in multiple Engineering and Product, providing tech perspective and vision ensuring alignment and communication for ongoing projects and initiatives.",
-        "Design and contribute to CI solution for a Monorepo project which smartly runs only the changed packages and services ensuring a fast and reliable CI/CD pipeline.",
-        "Encourage and promote the design system library as a way of separating concerns from business logic, improve brand standards and user experience.",
+        "An active contributor to a Product team of +10, working on various in-house tooling and customer-facing projects.",
+        "Participate in multiple Engineering and Product threads, providing tech perspective and eyesight for new and ongoing projects and initiatives.",
+        "Design and contribute to CI solutions for Monorepo projects running only the changed elements, ensuring prompt feedback and a reliable CI/CD pipeline.",
+        "Promote the design system library as a way to separate concerns, and improve brand standards, accessibility and user experience.",
         "Contribute to process improvements and automation of multiple cross-team libraries."
       ]
     },
@@ -57,9 +57,9 @@
       "highlights": [
         "Deliver multiple features for the DAZN Landing Pages micro frontend, using React, Typescript, and CSS-in-JS.",
         "Create Design tokens naming standardization proposal for the DAZN Design System.",
-        "Lead and contribute to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.",
-        "Present in the Frontend Guild and tech council, sharing knowledge about frontend technologies and different ongoing projects.",
-        "Lead and contribute to a new library to standardize formatting dates, times and currencies across multiple teams and projects ensuring consistency."
+        "Led and contributed to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.",
+        "Present in the Frontend Guild and tech council, sharing knowledge about frontend technologies and ongoing projects.",
+        "Led and contributed to a new library to standardize formatting dates, times and currencies across projects, ensuring consistency."
       ]
     },
     {
@@ -73,7 +73,7 @@
       "summary": "",
       "highlights": [
         "Organize collaboration meetings between multiple frontend teams.",
-        "Active participant of the performance guild.",
+        "Active participant in the performance guild, looking after new strategies and options.",
         "Create multiple proposals for different upcoming and ongoing technical challenges.",
         "Design a responsive desktop solution for the new platform.",
         "Mentored individuals in and outside the company and technically led a product team through major development cycles."
@@ -89,9 +89,9 @@
       "endDate": "2021-12-01",
       "summary": "",
       "highlights": [
-        "Designed backend for frontend, adopted by the entire platform.",
-        "Creator of a common internal logging library for server and client-side aligning logging standards and capabilities across the company.",
-        "Contributed to a new architecture development of a dynamic frontend platform and design system in React and Typescript."
+        "Designed backend for Frontend, being this a standard and widely adopted service by the entire platform.",
+        "Creator of a shared internal logging library for the server and client side, aligning logging standards and capabilities across the company.",
+        "Contributed to new architecture development, building and migrating features towards a dynamic frontend platform and design system in React and Typescript."
       ]
     },
     {
