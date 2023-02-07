@@ -34,22 +34,24 @@
     {
       "name": "DAZN",
       "location": "Amsterdam, NL",
-      "description": "Sports streaming and video on demand",
+      "description": "Global sports streaming and video on demand service.",
       "position": "Staff Frontend Engineer",
       "url": "https://dazn.com",
       "startDate": "2022-04-01",
       "highlights": [
-        "An active contributor to a Product team of +10, working on various in-house tooling and customer-facing projects.",
-        "Participate in multiple Engineering and Product threads, providing tech perspective and eyesight for new and ongoing projects and initiatives.",
-        "Design and contribute to CI solutions for Monorepo projects running only the changed elements, ensuring prompt feedback and a reliable CI/CD pipeline.",
-        "Promote and guide fellow engineers to adopt the Design System library as a way to separate concerns and improve brand standards, accessibility and user experience.",
-        "Contribute to process improvements and automation of multiple cross-team libraries."
+        "Promote and guide fellow engineers to adopt the Design System library to separate concerns and improve brand standards, accessibility and user experience.",
+        "Foster communication and create new proposals encouraging the engineering and design department to work closer.",
+        "Contribute to the new architecture vision, creation and evolution of DAZN's Landing Pages micro frontend.",
+        "Provide perspective and eyesight on multiple streams of ongoing Product and Engineering initiatives within the organisation.",
+        "Hands-on contributor, part of a team of +10 engineers for multiple projects in the growth domain.",
+        "Design and contribute to CI solutions for Monorepo projects, ensuring prompt feedback and a reliable CI/CD pipeline.",
+        "Contribute to process improvements and automation of multiple cross-team libraries(RFC, semantic-release, Etc.)."
       ]
     },
     {
       "name": "DAZN",
       "location": "Amsterdam, NL",
-      "description": "Sports streaming and video on demand",
+      "description": "Global sports streaming and video on demand service.",
       "position": "Senior Frontend Engineer",
       "url": "https://dazn.com",
       "startDate": "2021-05-01",
@@ -57,9 +59,9 @@
       "highlights": [
         "Deliver multiple features for the DAZN Landing Pages micro frontend, using React, Typescript, and CSS-in-JS.",
         "Create Design tokens naming standardization proposal for the DAZN Design System.",
-        "Led and contributed to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.",
+        "Lead and contributed to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.",
         "Present in the Frontend Guild and tech council, sharing knowledge about frontend technologies and ongoing projects.",
-        "Led and contributed to a new library to standardize formatting dates, times and currencies across projects, ensuring consistency."
+        "Lead and contributed to a new library to standardize formatting dates, times and currencies across projects."
       ]
     },
     {
@@ -72,11 +74,11 @@
       "endDate": "2021-04-01",
       "summary": "",
       "highlights": [
-        "Organize collaboration meetings between multiple frontend teams.",
-        "Active participant in the performance guild, looking after new strategies and options.",
+        "Foster collaboration between multiple Frontend teams.",
+        "Active participant in the performance guild, looking after new strategies and options, helping define the organisation's Frontend strategy.",
         "Create multiple proposals for different upcoming and ongoing technical challenges.",
         "Design a responsive desktop solution for the new platform.",
-        "Mentored individuals in and outside the company and technically led a product team through major development cycles."
+        "Mentor individuals in and outside the company and technically led a product team through development cycles."
       ]
     },
     {
@@ -89,9 +91,9 @@
       "endDate": "2019-06-01",
       "summary": "",
       "highlights": [
-        "Designed backend for Frontend, being this a standard and widely adopted service by the entire platform.",
+        "Design backend for Frontend, being this a standard and widely adopted service by the entire platform.",
         "Creator of a shared internal logging library for the server and client side, aligning logging standards and capabilities across the company.",
-        "Contributed to new architecture development, building and migrating features towards a dynamic frontend platform and design system in React and Typescript."
+        "Contribute to new architecture development, building and migrating features towards a dynamic frontend platform and design system in React and Typescript."
       ]
     },
     {
@@ -105,7 +107,7 @@
       "summary": "",
       "highlights": [
         "Setup new frontend observability metrics.",
-        "Maintained legacy observability services written in golang.",
+        "Maintain legacy observability services written in golang.",
         "Part of a product team working on cross-sell products for the company."
       ]
     },
@@ -118,7 +120,7 @@
       "startDate": "2013-06-01",
       "endDate": "2018-12-01",
       "highlights": [
-        "Lead a team internally for multiple clients based in NYC.",
+        "Lead development teams for multiple clients based in NYC.",
         "Collaboration and decision in web apps architecture for multiple projects",
         "Deliver multiple frontend projects in React, Angular and Nodejs.",
         "Mentor engineers spanning multiple teams and projects.",
@@ -135,8 +137,8 @@
       "startDate": "2012-04-01",
       "endDate": "2013-06-01",
       "highlights": [
-        "Contributed to a web application in ASP.NET(C#).",
-        "Contributed to Titanium Appcelerator mobile application."
+        "Contribute to a web application in ASP.NET(C#).",
+        "Contribute to Titanium Appcelerator mobile application."
       ]
     },
     {
@@ -148,8 +150,8 @@
       "startDate": "2010-10-01",
       "endDate": "2012-04-01",
       "highlights": [
-        "Contributed to multiple web applications in APS.NET.",
-        "Contributed to desktop application in C# .NET."
+        "Contribute to multiple web applications in ASP.NET.",
+        "Contribute to desktop application in C# .NET."
       ]
     }
   ],
@@ -206,6 +208,7 @@
         "GHA",
         "Docker",
         "Terraform",
+        "AWS",
         "React Native",
         "Python"
       ]
