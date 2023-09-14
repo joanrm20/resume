@@ -39,6 +39,7 @@
       "url": "https://dazn.com",
       "startDate": "2022-04-01",
       "highlights": [
+        "Build a comprehensive governance toolset for a headless CMS, enabling streamlined collaboration across multiple teams in creating and administrating content models.",
         "Promote and guide fellow engineers to adopt the Design System library to separate concerns and improve brand standards, accessibility and user experience.",
         "Foster communication and create new proposals encouraging the engineering and design department to work closer.",
         "Contribute to the new architecture vision, creation and evolution of DAZN's Landing Pages micro frontend moving towards Server-Driven UIs using next.js.",
