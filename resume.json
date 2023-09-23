@@ -23,9 +23,9 @@
         "url": "https://github.com/joanrm20"
       },
       {
-        "network": "Twitter",
+        "network": "X",
         "username": "joanrm20",
-        "url": "https://twitter.com/Joanrm20"
+        "url": "https://x.com/Joanrm20"
       }
     ]
   },
@@ -237,44 +237,25 @@
   "interests": [
     {
       "name": "User experience",
-      "keywords": [
-        "Usability",
-        "Accessibility",
-        "Performance"
-      ]
+      "keywords": ["Usability", "Accessibility", "Performance"]
     },
     {
       "name": "Online Learning",
-      "keywords": [
-        "Frontend Masters",
-        "Coursera"
-      ]
+      "keywords": ["Frontend Masters", "Coursera"]
     },
     {
       "name": "Media",
-      "keywords": [
-        "Music",
-        "Movies",
-        "Anime"
-      ]
+      "keywords": ["Music", "Movies", "Anime"]
     }
   ],
   "projects": [
     {
       "name": "Storybook Paddings Addon",
       "description": "A Storybook addon to add different paddings to your preview. Useful for checking how components behave when surrounded by white space.",
-      "keywords": [
-        "Storybook",
-        "Addon",
-        "React",
-        "Design",
-        "JSX"
-      ],
+      "keywords": ["Storybook", "Addon", "React", "Design", "JSX"],
       "startDate": "2020-06-10",
       "url": "https://github.com/rbardini/storybook-addon-paddings",
-      "roles": [
-        "Contributor"
-      ],
+      "roles": ["Contributor"],
       "type": "addon"
     }
   ],
