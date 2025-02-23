@@ -4,14 +4,17 @@
   "main": "index.js",
   "type": "module",
   "devDependencies": {
-    "jsonresume-theme-even": "0.17.0",
-    "puppeteer": "20.2.0",
-    "resumed": "1.0.3"
+    "jsonresume-theme-even": "0.23.0",
+    "puppeteer": "24.2.1",
+    "resumed": "4.1.0"
   },
   "scripts": {
-    "render": "resumed render -o public/index.html",
+    "render": "resumed render --theme jsonresume-theme-even -o public/index.html",
     "validate": "resumed validate",
     "start": "node index.js"
+  },
+  "engines" : { 
+    "node" : "23.7.0"
   },
   "repository": {
     "type": "git",
