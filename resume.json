@@ -31,12 +31,43 @@
   },
   "work": [
     {
+      "name": "Personio",
+      "location": "Amsterdam, NL",
+      "description": "HR Platform for SMEs.",
+      "position": "Staff Frontend Engineer",
+      "url": "https://www.personio.com/",
+      "startDate": "2025-10-01",
+      "highlights": [
+        "Starting domain FE guideliness and component foundations effort to establish better reusability and discoverability across domains.",
+        "Reduced LCP by 21% by eliminating unused JavaScript and restructuring bundle boundaries across high-traffic product surfaces.",
+        "Defined and owned the frontend integration model for company-wide groups management, shipping the first production use case to 100% of customers and establishing scalable patterns for more cross-domain adoption.",
+        "Eliminated dual data-access patterns within domain modules, consolidating integrations under a single GraphQL layer and preventing further architectural drift."
+      ]
+    },
+    {
+      "name": "Personio",
+      "location": "Amsterdam, NL",
+      "description": "HR Platform for SMEs.",
+      "position": "Lead Front Engineer",
+      "url": "https://www.personio.com/",
+      "startDate": "2023-11-01",
+      "endDate": "2025-10-01",
+      "highlights": [
+        "Owned end-to-end frontend delivery of company-wide UI rebrand for one of the largest product domains, coordinating 12+ stakeholders and executing a full-domain release with parallel UI support to ensure behavioral parity at launch.",
+        "Designed reusable geolocation and mapping infrastructure (location services + UI components), enabling multiple product teams to ship location-based features without duplicating third-party integrations.",
+        "Built reusable cross-product components, reducing duplication and improving UX consistency.",
+        "Led migration of 5 legacy applications from monolithic frontend to modular architecture, removing architectural bottlenecks that were slowing feature delivery and reducing system reliability.",
+        "Established recurring frontend architecture forum to increase cross-team alignment and reduce implementation drift."
+      ]
+    },
+    {
       "name": "DAZN",
       "location": "Amsterdam, NL",
       "description": "Global sports streaming and video on demand service.",
       "position": "Staff Frontend Engineer",
       "url": "https://dazn.com",
       "startDate": "2022-04-01",
+      "endDate": "2023-10-31",
       "highlights": [
         "Build a comprehensive governance toolset for a headless CMS, enabling streamlined collaboration across multiple teams in creating and administrating content models.",
         "Promote and guide fellow engineers to adopt the Design System library to separate concerns and improve brand standards, accessibility and user experience.",
