@@ -69,14 +69,12 @@
       "startDate": "2022-04-01",
       "endDate": "2023-10-31",
       "highlights": [
-        "Build a comprehensive governance toolset for a headless CMS, enabling streamlined collaboration across multiple teams in creating and administrating content models.",
-        "Promote and guide fellow engineers to adopt the Design System library to separate concerns and improve brand standards, accessibility and user experience.",
-        "Foster communication and create new proposals encouraging the engineering and design department to work closer.",
-        "Contribute to the new architecture vision, creation and evolution of DAZN's Landing Pages micro frontend moving towards Server-Driven UIs using next.js.",
-        "Provide perspective and eyesight on multiple streams of ongoing Product and Engineering initiatives within the organisation.",
-        "Hands-on contributor, part of a team of +10 engineers for multiple projects in the growth domain.",
-        "Design and contribute to CI solutions for Monorepo projects, ensuring prompt feedback and a reliable CI/CD pipeline.",
-        "Contribute to process improvements and automation of multiple cross-team libraries(RFC, semantic-release, Etc.)."
+        "Designed and implemented governance tooling for headless CMS architecture, enabling multiple teams to create and manage content models with consistent validation and version control.",
+        "Contributed to architectural evolution of landing pages micro-frontend toward Server-Driven UI (Next.js), decoupling layout control from frontend release cycles.",
+        "Promote adoption of shared Design System components across multiple domains, reducing UI divergence and improving accessibility compliance.",
+        "Optimized CI pipelines for large monorepo, improving feedback reliability and strengthening release confidence.",
+        "Standardized automated release workflows for cross-team libraries, reducing manual publishing errors and version drift.",
+        "Hands-on contributor, part of a team of +10 engineers for multiple projects in the growth domain."
       ]
     },
     {
@@ -88,11 +86,11 @@
       "startDate": "2021-05-01",
       "endDate": "2022-03-01",
       "highlights": [
-        "Deliver multiple features for the DAZN Landing Pages micro frontend, using React, Typescript, and CSS-in-JS.",
-        "Create Design tokens naming standardization proposal for the DAZN Design System.",
-        "Lead and contributed to a new design system for DAZN web applications, implementing essential atomic components and design tokens, documentation and automation.",
-        "Present in the Frontend Guild and tech council, sharing knowledge about frontend technologies and ongoing projects.",
-        "Lead and contributed to a new library to standardize formatting dates, times and currencies across projects."
+        "Delivered features for landing pages micro-frontend using React, TypeScript, and CSS-in-JS within a multi-team growth domain.",
+        "Create Design tokens naming standardization for the DAZN Design System.",
+        "Led development of core design system components and design tokens, establishing atomic component patterns adopted across web applications.",
+        "Built shared internationalization utilities for formatting dates, times, and currencies across product surfaces.",
+        "Presented architectural updates and proposals in frontend guild and technical council forums."
       ]
     },
     {
