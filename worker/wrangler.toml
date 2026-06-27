@@ -1,0 +1,10 @@
+name = "cv-chat"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Non-secret config. Secrets (ANTHROPIC_API_KEY, PASS_KEY) are set with
+# `wrangler secret put` and are NOT stored here or anywhere in the repo.
+[vars]
+ALLOWED_ORIGIN = "https://joanrm20.me"
+RESUME_URL = "https://joanrm20.me/resume.json"
