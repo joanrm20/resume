@@ -1,0 +1,55 @@
+---
+import { ClientRouter } from 'astro:transitions'
+import '@fontsource-variable/fraunces'
+import '@fontsource-variable/jetbrains-mono'
+import '../styles/global.css'
+import { resume, toJsonLd, SITE_URL } from '../lib/resume'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const b = resume.basics
+const {
+  title = `${b.name} — ${b.label ?? ''}`.trim(),
+  description = b.summary ?? '',
+} = Astro.props
+
+const jsonLd = JSON.stringify(toJsonLd())
+const canonical = new URL(Astro.url.pathname, SITE_URL).href
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={b.name} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/json" href="/resume.json" title="JSON Resume" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={SITE_URL} />
+    {b.image && <meta property="og:image" content={b.image} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script is:inline set:html={`(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();`} />
+
+    <script type="application/ld+json" is:inline set:html={jsonLd} />
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

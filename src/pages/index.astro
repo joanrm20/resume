@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro'
+import Hero from '../components/Hero.astro'
+import Section from '../components/Section.astro'
+import Experience from '../components/Experience.astro'
+import Skills from '../components/Skills.astro'
+import Education from '../components/Education.astro'
+import Colophon from '../components/Colophon.astro'
+---
+
+<Base>
+  <main>
+    <Hero />
+    <Section n="01" title="Experience" id="experience">
+      <Experience />
+    </Section>
+    <Section n="02" title="Skills" id="skills">
+      <Skills />
+    </Section>
+    <Section n="03" title="Education" id="education">
+      <Education />
+    </Section>
+  </main>
+  <Colophon />
+</Base>

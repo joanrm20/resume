@@ -1,0 +1,36 @@
+---
+import { resume } from '../lib/resume'
+---
+
+<div class="groups">
+  {resume.skills.map((group) => (
+    <div class="group reveal">
+      <h3 class="gname mono">{group.name}</h3>
+      <ul class="tags">
+        {group.keywords?.map((k) => <li class="tag mono">{k}</li>)}
+      </ul>
+    </div>
+  ))}
+</div>
+
+<style>
+  .groups { display: grid; gap: 1.6rem; }
+  .gname {
+    font-size: var(--step--1);
+    color: var(--fg-soft);
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+  }
+  .gname::before { content: '# '; color: var(--accent); }
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .tag {
+    font-size: var(--step--1);
+    padding: 0.28rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--fg);
+    background: var(--bg-soft);
+    transition: border-color 0.18s ease, color 0.18s ease;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+</style>
