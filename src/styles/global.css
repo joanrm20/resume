@@ -116,3 +116,23 @@ a:hover { text-decoration-color: var(--accent); }
   .reveal { opacity: 0; transform: translateY(14px); animation: reveal linear forwards; animation-timeline: view(); animation-range: entry 0% cover 22%; }
   @keyframes reveal { to { opacity: 1; transform: none; } }
 }
+
+/* Print / PDF — force light, drop chrome, avoid awkward page breaks */
+@page { size: A4; margin: 14mm; }
+@media print {
+  :root {
+    --bg: #ffffff; --bg-soft: #f4f4f3; --fg: #111111; --fg-soft: #3a3a3a;
+    --fg-faint: #6a6a6a; --line: #d8d8d4; --accent: #0f7d51; --shadow: none;
+  }
+  html { font-size: 10.5px; }
+  body { background: #fff; }
+  .cmdk, .cmdk-trigger { display: none !important; }
+  .cursor { display: none !important; }
+  .wrap { max-width: none; padding-inline: 0; }
+  .hero { padding-top: 0; }
+  .section { padding-block: 0.9rem; }
+  .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .entry, .item, .group { break-inside: avoid; }
+  .colophon { border: 0; background: #fff; }
+  a { text-decoration: none; }
+}
