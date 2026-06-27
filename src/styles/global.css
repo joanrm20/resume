@@ -1,8 +1,8 @@
 /* Editorial foundation, terminal accents. Light + dark via tokens. */
 
 :root {
-  --font-display: 'Fraunces Variable', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', 'Menlo', monospace;
 
   /* Type scale (1.25 minor third) */
@@ -17,41 +17,41 @@
   --measure: 68ch;
   --radius: 10px;
 
-  /* Light — warm paper & ink */
-  --bg: #fbfaf7;
-  --bg-soft: #f1efe8;
-  --fg: #1b1a17;
-  --fg-soft: #6c6a61;
-  --fg-faint: #9a978c;
-  --line: #e3e0d7;
-  --accent: #b6480d;
-  --accent-soft: #f3e6dc;
-  --shadow: 0 14px 40px rgba(40, 30, 15, 0.13);
+  /* Light — cool neutral & ink */
+  --bg: #fbfbfa;
+  --bg-soft: #f0f0ee;
+  --fg: #18181b;
+  --fg-soft: #62626a;
+  --fg-faint: #9a9aa2;
+  --line: #e6e6e3;
+  --accent: #0f7d51;
+  --accent-soft: #e4f2eb;
+  --shadow: 0 14px 40px rgba(20, 20, 25, 0.10);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #14130f;
-    --bg-soft: #1e1c17;
-    --fg: #f3f1ea;
-    --fg-soft: #b3afa2;
-    --fg-faint: #76736a;
-    --line: #2c2a23;
-    --accent: #f59e4b;
-    --accent-soft: #2a2014;
+    --bg: #0c0c0d;
+    --bg-soft: #161618;
+    --fg: #ededee;
+    --fg-soft: #a1a1a8;
+    --fg-faint: #6a6a72;
+    --line: #262629;
+    --accent: #4cc38a;
+    --accent-soft: #14241c;
     --shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
   }
 }
 
 :root[data-theme='dark'] {
-  --bg: #14130f;
-  --bg-soft: #1e1c17;
-  --fg: #f3f1ea;
-  --fg-soft: #b3afa2;
-  --fg-faint: #76736a;
-  --line: #2c2a23;
-  --accent: #f59e4b;
-  --accent-soft: #2a2014;
+  --bg: #0c0c0d;
+  --bg-soft: #161618;
+  --fg: #ededee;
+  --fg-soft: #a1a1a8;
+  --fg-faint: #6a6a72;
+  --line: #262629;
+  --accent: #4cc38a;
+  --accent-soft: #14241c;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -78,7 +78,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 460; line-height: 1.05; letter-spacing: -0.015em; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.07; letter-spacing: -0.022em; }
 
 a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--accent); }
