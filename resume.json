@@ -38,7 +38,7 @@
       "url": "https://www.personio.com/",
       "startDate": "2025-10-01",
       "highlights": [
-        "Starting domain FE guideliness and component foundations effort to establish better reusability and discoverability across domains.",
+        "Starting domain FE guidelines and component foundations effort to establish better reusability and discoverability across domains.",
         "Reduced LCP by 21% by eliminating unused JavaScript and restructuring bundle boundaries across high-traffic product surfaces.",
         "Defined and owned the frontend integration model for company-wide groups management, shipping the first production use case to 100% of customers and establishing scalable patterns for more cross-domain adoption.",
         "Eliminated dual data-access patterns within domain modules, consolidating integrations under a single GraphQL layer and preventing further architectural drift."
@@ -87,7 +87,7 @@
       "endDate": "2022-03-01",
       "highlights": [
         "Delivered features for landing pages micro-frontend using React, TypeScript, and CSS-in-JS within a multi-team growth domain.",
-        "Createe Design tokens naming standardization for the DAZN Design System.",
+        "Created Design tokens naming standardization for the DAZN Design System.",
         "Led development of core design system components and design tokens, establishing atomic component patterns adopted across web applications.",
         "Built shared internationalization utilities for formatting dates, times, and currencies across product surfaces.",
         "Presented architectural updates and proposals in frontend guild and technical council forums."
@@ -186,7 +186,7 @@
   ],
   "education": [
     {
-      "institution": "Universidad Latinoamerica de Ciencia y Tecnologia",
+      "institution": "Universidad Latinoamericana de Ciencia y Tecnología",
       "url": "https://www.ulacit.ac.cr/",
       "area": "Software Engineering",
       "studyType": "Degree (Coursework completed, degree not conferred)",
