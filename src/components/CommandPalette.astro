@@ -53,10 +53,10 @@ const email = b.email ?? ''
     }
 
     const commands = [
-      { label: 'Experience', hint: 'go', run: () => jump('#experience') },
-      { label: 'Skills', hint: 'go', run: () => jump('#skills') },
-      { label: 'Education', hint: 'go', run: () => jump('#education') },
-      { label: 'Top', hint: 'go', run: () => jump('body') },
+      { label: 'Experience', hint: 'section', run: () => jump('#experience') },
+      { label: 'Skills', hint: 'section', run: () => jump('#skills') },
+      { label: 'Education', hint: 'section', run: () => jump('#education') },
+      { label: 'Back to top', hint: '', run: () => jump('body') },
       { label: 'Toggle theme', hint: 'light / dark', run: toggleTheme },
       ...(email ? [{ label: 'Copy email', hint: email, run: copyEmail }] : []),
       ...profiles.map((p) => ({ label: `Open ${p.label}`, hint: 'link', run: () => openLink(p.url) })),
@@ -133,7 +133,9 @@ const email = b.email ?? ''
   }
 </script>
 
-<style>
+<style is:global>
+  .cmdk[hidden] { display: none; }
+
   .cmdk-trigger {
     position: fixed;
     right: 1rem;
@@ -142,15 +144,16 @@ const email = b.email ?? ''
     display: inline-flex;
     gap: 0.25rem;
     align-items: center;
-    padding: 0.5rem 0.6rem;
-    background: var(--bg-soft);
-    border: 1px solid var(--line);
+    padding: 0.55rem 0.7rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
     border-radius: 8px;
-    color: var(--fg-soft);
+    color: var(--accent);
+    font-weight: 500;
     cursor: pointer;
     box-shadow: var(--shadow);
   }
-  .cmdk-trigger:hover { color: var(--fg); border-color: var(--accent); }
+  .cmdk-trigger:hover { background: var(--accent); color: var(--bg); }
   .cmdk-trigger kbd {
     font: inherit;
     font-size: var(--step--1);
