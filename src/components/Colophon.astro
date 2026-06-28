@@ -11,11 +11,10 @@ const year = new Date().getFullYear()
         <a href={p.url} target="_blank" rel="noopener">{p.network.toLowerCase()}</a>
       ))}
       {b.email && <a href={`mailto:${b.email}`}>email</a>}
-      <a href="/resume.json">resume.json</a>
     </p>
     <p class="meta mono">
       <span class="prompt">{b.name} · {locationString(b.location)}</span><br />
-      <span class="dim">© {year} · built with Astro · set in Fraunces &amp; JetBrains Mono</span>
+      <span class="dim">© {year}</span>
     </p>
   </div>
 </footer>
