@@ -18,7 +18,7 @@ const primary = [
       <span class="usr">jose@joanrm20</span> <span class="pth">~</span> <span class="pct">%</span> <span id="cmd-whoami">whoami</span><span class="caret"></span>
     </p>
 
-    <h1 class="name">{b.name}</h1>
+    <h1 class="name">{b.name} <span class="wave" aria-hidden="true">👋</span></h1>
     <p class="role">{b.label}</p>
 
     {b.summary && <p class="about" set:html={emphasize(b.summary)} />}
@@ -78,6 +78,16 @@ const primary = [
     font-weight: 500;
     letter-spacing: -0.03em;
     margin-top: 1.7rem;
+  }
+  .wave { display: inline-block; transform-origin: 70% 70%; }
+  @media (prefers-reduced-motion: no-preference) {
+    .wave { animation: wave 1.8s ease-in-out 0.5s 1; }
+  }
+  @keyframes wave {
+    0%, 60%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(14deg); }
+    20%, 40% { transform: rotate(-8deg); }
+    50% { transform: rotate(10deg); }
   }
   .role {
     font-size: var(--step-0);

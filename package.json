@@ -8,6 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "pdf": "node scripts/pdf.js",
+    "og": "node scripts/og.js",
+    "assets": "pnpm build && pnpm pdf && pnpm og",
     "tailor": "node scripts/tailor.js",
     "validate": "resumed validate"
   },

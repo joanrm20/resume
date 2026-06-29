@@ -1,0 +1,61 @@
+---
+import '@fontsource-variable/space-grotesk'
+import '@fontsource-variable/jetbrains-mono'
+import { resume } from '../lib/resume'
+
+const b = resume.basics
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * { margin: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 630px; }
+      body {
+        background: #14130f;
+        color: #ededee;
+        font-family: 'Inter Variable', sans-serif;
+        padding: 84px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .bar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: #4cc38a; }
+      .prompt {
+        font-family: 'JetBrains Mono Variable', monospace;
+        font-size: 27px;
+        color: #76736a;
+        margin-bottom: 30px;
+      }
+      .prompt .u { color: #4cc38a; }
+      .prompt .c { color: #c9c9cc; }
+      .name {
+        font-family: 'Space Grotesk Variable', sans-serif;
+        font-size: 98px;
+        font-weight: 600;
+        letter-spacing: -3px;
+        line-height: 1;
+      }
+      .role { font-size: 40px; color: #a1a1a8; margin-top: 20px; }
+      .foot {
+        font-family: 'JetBrains Mono Variable', monospace;
+        font-size: 27px;
+        color: #4cc38a;
+        position: absolute;
+        left: 84px;
+        bottom: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar"></div>
+    <p class="prompt"><span class="u">jose@joanrm20</span> ~ % <span class="c">whoami</span></p>
+    <h1 class="name">{b.name}</h1>
+    <p class="role">{b.label}</p>
+    <p class="foot">joanrm20.me</p>
+  </body>
+</html>
