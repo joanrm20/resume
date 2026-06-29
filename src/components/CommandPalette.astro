@@ -6,10 +6,6 @@ const profiles = (b.profiles ?? []).map((p) => ({ label: p.network, url: p.url }
 const email = b.email ?? ''
 ---
 
-<button id="cmdk-trigger" class="cmdk-trigger mono" aria-label="Open command menu" aria-keyshortcuts="Meta+K Control+K">
-  <kbd>⌘</kbd><kbd>K</kbd>
-</button>
-
 <div id="cmdk" class="cmdk" hidden>
   <div class="cmdk-overlay" data-cmdk-close></div>
   <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Command menu">
@@ -129,7 +125,6 @@ const email = b.email ?? ''
       else if (e.key === 'Enter') { e.preventDefault(); runCmd(active) }
     })
     root.querySelector('[data-cmdk-close]')?.addEventListener('click', closeCmdk)
-    $('cmdk-trigger')?.addEventListener('click', openCmdk)
   }
   document.addEventListener('astro:page-load', wireCmdk)
   wireCmdk()
@@ -137,30 +132,6 @@ const email = b.email ?? ''
 
 <style is:global>
   .cmdk[hidden] { display: none; }
-
-  .cmdk-trigger {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 50;
-    display: inline-flex;
-    gap: 0.25rem;
-    align-items: center;
-    padding: 0.55rem 0.7rem;
-    background: var(--accent-soft);
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    color: var(--accent);
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-  }
-  .cmdk-trigger:hover { background: var(--accent); color: var(--bg); }
-  .cmdk-trigger kbd {
-    font: inherit;
-    font-size: var(--step--1);
-    line-height: 1;
-  }
 
   .cmdk {
     position: fixed;

@@ -141,7 +141,7 @@ a:hover { text-decoration-color: var(--accent); }
   }
   html { font-size: 10.5px; }
   body { background: #fff; }
-  .cmdk, .cmdk-trigger { display: none !important; }
+  .cmdk { display: none !important; }
   .cursor { display: none !important; }
   .wrap { max-width: none; padding-inline: 0; }
   .hero { padding-top: 0; }

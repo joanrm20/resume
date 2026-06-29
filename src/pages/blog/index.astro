@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro'
-import Colophon from '../../components/Colophon.astro'
 import { getCollection } from 'astro:content'
 import { resume } from '../../lib/resume'
 
@@ -32,7 +31,6 @@ const fmt = (d: Date) =>
       {posts.length === 0 && <li class="empty mono">No posts yet. Check back soon.</li>}
     </ul>
   </main>
-  <Colophon />
 </Base>
 
 <style>

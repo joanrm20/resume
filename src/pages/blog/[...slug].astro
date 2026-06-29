@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro'
-import Colophon from '../../components/Colophon.astro'
 import { getCollection, render } from 'astro:content'
 import { resume } from '../../lib/resume'
 
@@ -25,7 +24,6 @@ const fmt = (d: Date) =>
       <Content />
     </div>
   </main>
-  <Colophon />
 </Base>
 
 <style>

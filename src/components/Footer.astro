@@ -1,0 +1,84 @@
+---
+import { resume, locationString } from '../lib/resume'
+
+const b = resume.basics
+const email = b.email ?? ''
+const profiles = b.profiles ?? []
+const year = new Date().getFullYear()
+---
+
+<footer class="site-footer">
+  <div class="wrap bar mono">
+    <nav class="flinks" aria-label="Profiles">
+      <a href="/">home</a>
+      {profiles.map((p) => (
+        <a href={p.url} target="_blank" rel="noopener">{p.network.toLowerCase()}</a>
+      ))}
+      {email && <a href={`mailto:${email}`}>email</a>}
+    </nav>
+    <div class="end">
+      <span class="clock" id="footer-clock">Amsterdam · --:--</span>
+      <button type="button" class="kbd" id="footer-cmdk" aria-label="Open command menu">⌘K</button>
+    </div>
+  </div>
+  <p class="wrap copy mono">© {year} · {b.name} · {locationString(b.location)}</p>
+</footer>
+
+<script>
+  function initFooter() {
+    const clock = document.getElementById('footer-clock')
+    if (clock) {
+      const fmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Amsterdam',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
+      const tick = () => { clock.textContent = `Amsterdam · ${fmt.format(new Date())}` }
+      tick()
+      clearInterval((window as any).__footerClock)
+      ;(window as any).__footerClock = setInterval(tick, 15000)
+    }
+    const btn = document.getElementById('footer-cmdk')
+    if (btn && !btn.dataset.wired) {
+      btn.dataset.wired = '1'
+      btn.addEventListener('click', () =>
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true })),
+      )
+    }
+  }
+  document.addEventListener('astro:page-load', initFooter)
+</script>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    margin-top: clamp(3rem, 2rem + 4vw, 5rem);
+    padding-block: 1.4rem 2.4rem;
+    font-size: var(--step--1);
+    color: var(--fg-faint);
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .flinks { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+  .flinks a { color: var(--fg-faint); text-decoration: none; }
+  .flinks a:hover { color: var(--accent); }
+  .end { display: flex; align-items: center; gap: 1rem; }
+  .kbd {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    color: var(--fg-soft);
+    font: inherit;
+    cursor: pointer;
+  }
+  .kbd:hover { border-color: var(--accent); color: var(--accent); }
+  .copy { margin-top: 1rem; color: var(--fg-faint); }
+  @media print { .site-footer { display: none; } }
+</style>

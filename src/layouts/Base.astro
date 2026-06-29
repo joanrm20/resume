@@ -6,6 +6,7 @@ import '@fontsource-variable/jetbrains-mono'
 import '../styles/global.css'
 import { resume, toJsonLd, SITE_URL } from '../lib/resume'
 import CommandPalette from '../components/CommandPalette.astro'
+import Footer from '../components/Footer.astro'
 
 interface Props {
   title?: string
@@ -53,6 +54,7 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href
   </head>
   <body>
     <slot />
+    <Footer />
     <CommandPalette />
   </body>
 </html>
