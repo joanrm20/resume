@@ -1,0 +1,303 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Jose Ramirez Mora",
+    "label": "Staff Frontend Engineer",
+    "image": "https://avatars.githubusercontent.com/u/4033088?v=4",
+    "email": "jo.chicho@gmail.com",
+    "summary": "Staff Frontend Engineer building frontend architecture, design systems, and developer experience at scale — turning sprawling, hard-to-change frontends into fast, reliable platforms teams enjoy building on.",
+    "location": {
+      "city": "Amsterdam Area",
+      "countryCode": "NL",
+      "region": "North Holland"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "joanrm20",
+        "url": "https://www.linkedin.com/in/joanrm20"
+      },
+      {
+        "network": "Github",
+        "username": "joanrm20",
+        "url": "https://github.com/joanrm20"
+      },
+      {
+        "network": "X",
+        "username": "joanrm20",
+        "url": "https://x.com/Joanrm20"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Personio",
+      "location": "Amsterdam, NL",
+      "description": "HR Platform for SMEs.",
+      "position": "Staff Frontend Engineer",
+      "url": "https://www.personio.com/",
+      "startDate": "2025-10-01",
+      "highlights": [
+        "Cut p75 LCP 21% in real-user monitoring (RUM) across high-traffic product surfaces by eliminating unused JavaScript and re-drawing bundle boundaries.",
+        "Defined and owned the frontend integration model for company-wide groups management — shipped the first production use case to all customers and established a pattern now reused across 3+ product domains.",
+        "Eliminated dual data-access patterns within domain modules, consolidating integrations under a single GraphQL layer and preventing further architectural drift.",
+        "Driving an effort to connect design-system components directly to product-domain data sources, so teams reuse a single integration instead of re-wiring it — reducing duplication, stale API usage, and UX drift across the system."
+      ]
+    },
+    {
+      "name": "Personio",
+      "location": "Amsterdam, NL",
+      "description": "HR Platform for SMEs.",
+      "position": "Lead Frontend Engineer",
+      "url": "https://www.personio.com/",
+      "startDate": "2023-11-01",
+      "endDate": "2025-10-01",
+      "highlights": [
+        "Owned end-to-end frontend delivery of the company-wide UI rebrand across my product domain — aligning with the central rebrand program while coordinating 12+ stakeholders and running a full-domain release with parallel UI to ensure parity at launch.",
+        "Designed reusable geolocation and mapping infrastructure (location services + UI components), enabling multiple product teams to ship location-based features without duplicating third-party integrations.",
+        "Built reusable cross-product components, reducing duplication and improving UX consistency.",
+        "Led migration of 5 applications off a legacy frontend monolith onto the modern modular stack, escaping a slow, risky, debt-accumulating codebase in favor of one where features ship reliably.",
+        "Established recurring frontend architecture forum to increase cross-team alignment and reduce implementation drift."
+      ]
+    },
+    {
+      "name": "DAZN",
+      "location": "Amsterdam, NL",
+      "description": "Global sports streaming and video on demand service.",
+      "position": "Staff Frontend Engineer",
+      "url": "https://dazn.com",
+      "startDate": "2022-04-01",
+      "endDate": "2023-10-31",
+      "highlights": [
+        "Designed and implemented governance tooling for headless CMS architecture, enabling multiple teams to create and manage content models with consistent validation and version control.",
+        "Contributed to architectural evolution of landing pages micro-frontend toward Server-Driven UI (Next.js), decoupling layout control from frontend release cycles.",
+        "Drove adoption of the Design System library across 3+ frontend teams, conducting guidance and code reviews that improved brand consistency, accessibility compliance, and reduced per-team UI implementation time.",
+        "Optimized CI pipelines for large monorepo, improving feedback reliability and strengthening release confidence.",
+        "Standardized automated release workflows for cross-team libraries, reducing manual publishing errors and version drift."
+      ]
+    },
+    {
+      "name": "DAZN",
+      "location": "Amsterdam, NL",
+      "description": "Global sports streaming and video on demand service.",
+      "position": "Senior Frontend Engineer",
+      "url": "https://dazn.com",
+      "startDate": "2021-05-01",
+      "endDate": "2022-03-01",
+      "highlights": [
+        "Delivered features for landing pages micro-frontend using React, TypeScript, and CSS-in-JS within a multi-team growth domain.",
+        "Created Design tokens naming standardization for the DAZN Design System.",
+        "Led development of core design system components and design tokens, establishing atomic component patterns adopted across web applications.",
+        "Built shared internationalization utilities for formatting dates, times, and currencies across product surfaces.",
+        "Presented architectural updates and proposals in frontend guild and technical council forums."
+      ]
+    },
+    {
+      "name": "Travix",
+      "location": "Amsterdam, NL",
+      "description": "Online travel agency",
+      "position": "Frontend Tech Lead",
+      "url": "https://www.travix.com/",
+      "startDate": "2019-06-01",
+      "endDate": "2021-04-01",
+      "summary": "",
+      "highlights": [
+        "Established cross-team frontend collaboration across 4 product teams, aligning on shared architecture decisions and reducing duplicated implementation efforts by consolidating common patterns into shared libraries",
+        "Active participant in the performance guild, looking after new strategies and options, helping define the organisation's Frontend strategy.",
+        "Created multiple proposals for different upcoming and ongoing technical challenges.",
+        "Designed a responsive desktop solution for the new platform.",
+        "Mentored individuals in and outside the company and technically led a product team through development cycles."
+      ]
+    },
+    {
+      "name": "Travix",
+      "location": "Amsterdam, NL",
+      "description": "Online travel agency",
+      "position": "Senior Frontend Engineer",
+      "url": "https://www.travix.com/",
+      "startDate": "2019-03-01",
+      "endDate": "2019-06-01",
+      "summary": "",
+      "highlights": [
+        "Designed backend for Frontend, being this a standard and widely adopted service by the entire platform.",
+        "Creator of a shared internal logging library for the server and client side, aligning logging standards and capabilities across the company.",
+        "Contributed to new architecture development, building and migrating features towards a dynamic frontend platform and design system in React and Typescript."
+      ]
+    },
+    {
+      "name": "Travix",
+      "location": "Amsterdam, NL",
+      "description": "Online travel agency",
+      "position": "Frontend Engineer",
+      "url": "https://www.travix.com/",
+      "startDate": "2018-03-01",
+      "endDate": "2019-03-01",
+      "summary": "",
+      "highlights": [
+        "Setup new frontend observability metrics.",
+        "Maintain legacy observability services written in golang.",
+        "Part of a product team working on cross-sell products for the company."
+      ]
+    },
+    {
+      "name": "First Factory",
+      "location": "Heredia, CRC",
+      "description": "Nearshore software development.",
+      "position": "Full Stack Team Lead",
+      "url": "https://firstfactory.com/",
+      "startDate": "2013-06-01",
+      "endDate": "2018-12-01",
+      "highlights": [
+        "Lead development teams for multiple clients based in NYC.",
+        "Collaboration and decision in web apps architecture for multiple projects",
+        "Delivered multiple frontend projects in React, Angular and Nodejs.",
+        "Mentored engineers spanning multiple teams and projects.",
+        "Created multiple prototypes for mobile and web apps.",
+        "Contributed to practice management software for healthcare written in Angular 1.x and C#."
+      ]
+    },
+    {
+      "name": "GBSYS",
+      "location": "Curridabat, CRC",
+      "description": "Technology consultancy company.",
+      "position": "Software Engineer",
+      "url": "https://www.gbsys.com/?lang=en",
+      "startDate": "2012-04-01",
+      "endDate": "2013-06-01",
+      "highlights": [
+        "Contributed to a web application in ASP.NET(C#).",
+        "Contributed to Titanium Appcelerator mobile application."
+      ]
+    },
+    {
+      "name": "3WV",
+      "location": "San Jose, CRC",
+      "description": "Web marketing agency.",
+      "position": "Software Engineer",
+      "url": "http://www.3wv.net/",
+      "startDate": "2010-10-01",
+      "endDate": "2012-04-01",
+      "highlights": [
+        "Contributed to multiple web applications in ASP.NET.",
+        "Contributed to desktop application in C# .NET."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Latinoamericana de Ciencia y Tecnología",
+      "url": "https://www.ulacit.ac.cr/",
+      "area": "Software Engineering",
+      "studyType": "Degree (Coursework completed, degree not conferred)",
+      "startDate": "2011-06-01",
+      "endDate": "2014-01-01"
+    },
+    {
+      "institution": "Universidad Fidelitas",
+      "url": "https://ufidelitas.ac.cr/",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2008-04-01",
+      "endDate": "2011-04-01"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Travix Talent Trail Winner 2019",
+      "date": "2019-10-01",
+      "awarder": "Travix"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Typescript",
+        "React",
+        "Redux",
+        "styled-components",
+        "Next.js",
+        "Babel",
+        "Webpack",
+        "ESLint",
+        "Storybook",
+        "Jest",
+        "Nodejs",
+        "GraphQL"
+      ]
+    },
+    {
+      "name": "Other",
+      "keywords": [
+        "Github Actions",
+        "Docker",
+        "Terraform",
+        "AWS",
+        "React Native",
+        "Python"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full professional proficiency"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "User experience",
+      "keywords": [
+        "Usability",
+        "Accessibility",
+        "Performance"
+      ]
+    },
+    {
+      "name": "Online Learning",
+      "keywords": [
+        "Frontend Masters",
+        "Coursera"
+      ]
+    },
+    {
+      "name": "Media",
+      "keywords": [
+        "Music",
+        "Movies",
+        "Anime"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Storybook Paddings Addon",
+      "description": "A Storybook addon to add different paddings to your preview. Useful for checking how components behave when surrounded by white space.",
+      "keywords": [
+        "Storybook",
+        "Addon",
+        "React",
+        "Design",
+        "JSX"
+      ],
+      "startDate": "2020-06-10",
+      "url": "https://github.com/rbardini/storybook-addon-paddings",
+      "roles": [
+        "Contributor"
+      ],
+      "type": "addon"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00"
+  }
+}
