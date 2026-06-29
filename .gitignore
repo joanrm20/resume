@@ -181,12 +181,6 @@ dist
 dist/
 .astro/
 
-# Cloudflare Worker — local secrets & build cache (never commit these)
-.dev.vars
-**/.dev.vars
-.wrangler/
-**/.wrangler/
-
 # Tailored résumé output
 resume.tailored.json
 resume.*.json

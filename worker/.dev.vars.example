@@ -1,8 +1,0 @@
-# Copy to `.dev.vars` for local `wrangler dev`. `.dev.vars` is gitignored.
-# In production these are set with `pnpm exec wrangler secret put <NAME>` instead.
-ANTHROPIC_API_KEY=sk-ant-your-key
-PASS_KEY=local-test-key
-
-# Where the worker reads résumé data. Locally the live site isn't deployed yet,
-# so point at the committed copy on GitHub (or your local preview server).
-RESUME_URL=https://raw.githubusercontent.com/joanrm20/resume/main/resume.json

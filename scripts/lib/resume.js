@@ -9,11 +9,6 @@ export const PUBLIC_DIR = join(ROOT, 'public')
 export const RESUME_PATH = join(ROOT, 'resume.json')
 export const SITE_URL = 'https://joanrm20.me'
 
-// Chat widget endpoint (the deployed Cloudflare Worker). Set at build time:
-//   CHAT_ENDPOINT=https://cv-chat.<you>.workers.dev npm run build
-// When empty, the widget is omitted from the page.
-export const CHAT_ENDPOINT = process.env.CHAT_ENDPOINT || ''
-
 export async function loadResume(path = RESUME_PATH) {
   return JSON.parse(await readFile(path, 'utf-8'))
 }
