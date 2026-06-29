@@ -18,18 +18,24 @@ const fmt = (d: Date) =>
       <h1>Writing</h1>
     </header>
 
-    <ul class="posts">
-      {posts.map((p) => (
-        <li class="post">
-          <a class="post-link" href={`/blog/${p.id}`}>
-            <span class="ptitle">{p.data.title}</span>
-            <time class="pdate mono" datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
-          </a>
-          {p.data.description && <p class="pdesc">{p.data.description}</p>}
-        </li>
-      ))}
-      {posts.length === 0 && <li class="empty mono">No posts yet. Check back soon.</li>}
-    </ul>
+    {posts.length > 0 ? (
+      <ul class="posts">
+        {posts.map((p) => (
+          <li class="post">
+            <a class="post-link" href={`/blog/${p.id}`}>
+              <span class="ptitle">{p.data.title}</span>
+              <time class="pdate mono" datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
+            </a>
+            {p.data.description && <p class="pdesc">{p.data.description}</p>}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <div class="soon">
+        <p class="soon-line mono"><span class="dot" aria-hidden="true"></span>status: migrating a few good articles over</p>
+        <p class="soon-sub">Hold tight — they'll land here soon. Find me on the links below in the meantime.</p>
+      </div>
+    )}
   </main>
 </Base>
 
@@ -54,5 +60,23 @@ const fmt = (d: Date) =>
   .post-link:hover .ptitle { color: var(--accent); }
   .pdate { font-size: var(--step--1); color: var(--fg-faint); white-space: nowrap; }
   .pdesc { color: var(--fg-soft); margin-top: 0.4rem; max-width: var(--measure); }
-  .empty { color: var(--fg-faint); }
+
+  .soon { padding-block: 1.5rem 3rem; }
+  .soon-line { font-size: var(--step-0); color: var(--fg); }
+  .soon-sub { font-size: var(--step-0); color: var(--fg-soft); margin-top: 0.8rem; max-width: 52ch; line-height: 1.7; }
+  .dot {
+    display: inline-block;
+    position: relative;
+    width: 7px;
+    height: 7px;
+    margin-right: 0.6em;
+    border-radius: 50%;
+    background: var(--accent);
+    vertical-align: 0.05em;
+  }
+  .dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); }
+  @media (prefers-reduced-motion: no-preference) {
+    .dot::after { animation: ping 1.9s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  }
+  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
 </style>

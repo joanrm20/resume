@@ -2,7 +2,7 @@
 title: 'Hello, world'
 description: 'What this space is for — and what I might write about.'
 pubDate: 2026-06-29
-draft: false
+draft: true
 ---
 
 This is a placeholder post so the blog has something to render. Edit or delete it.
