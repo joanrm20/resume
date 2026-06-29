@@ -3,17 +3,29 @@ import { resume, dateRange } from '../lib/resume'
 ---
 
 <ul class="edu">
-  {resume.education.map((e) => (
-    <li class="item reveal">
-      <div class="head">
-        <h3 class="inst">
-          {e.url ? <a href={e.url} target="_blank" rel="noopener">{e.institution}</a> : e.institution}
-        </h3>
-        <span class="dates mono">{dateRange(e.startDate, e.endDate)}</span>
-      </div>
-      <p class="study mono">{[e.studyType, e.area].filter(Boolean).join(' · ')}</p>
-    </li>
-  ))}
+  {resume.education.map((e) => {
+    const m = e.studyType?.match(/^(.*?)\s*\((.*)\)\s*$/)
+    const base = m ? m[1] : e.studyType
+    const detail = m ? m[2] : null
+    const quip = detail && /not conferred/i.test(detail)
+      ? 'Coursework: ✓. Diploma: pending. Knowledge: secured. 🧠'
+      : null
+    return (
+      <li class="item reveal">
+        <div class="head">
+          <h3 class="inst">
+            {e.url ? <a href={e.url} target="_blank" rel="noopener">{e.institution}</a> : e.institution}
+          </h3>
+          <span class="dates mono">{dateRange(e.startDate, e.endDate)}</span>
+        </div>
+        <p class="study mono">
+          {quip ? <span class="tip" tabindex="0" data-tip={quip}>{base}</span> : base}
+          {detail && <span class="print-detail"> ({detail})</span>}
+          {e.area && <span> · {e.area}</span>}
+        </p>
+      </li>
+    )
+  })}
 </ul>
 
 <style>
@@ -30,4 +42,39 @@ import { resume, dateRange } from '../lib/resume'
   .inst a:hover { text-decoration: underline; }
   .dates { font-size: var(--step--1); color: var(--fg-faint); white-space: nowrap; }
   .study { font-size: var(--step--1); color: var(--accent); margin-top: 0.2rem; }
+  .tip {
+    position: relative;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    cursor: help;
+    outline: none;
+  }
+  .tip::after {
+    content: attr(data-tip);
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 8px);
+    width: max-content;
+    max-width: 240px;
+    padding: 0.45rem 0.6rem;
+    border-radius: 7px;
+    background: var(--fg);
+    color: var(--bg);
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    line-height: 1.4;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.16s ease, transform 0.16s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .tip:hover::after,
+  .tip:focus-visible::after { opacity: 1; transform: none; }
+  .print-detail { display: none; }
+  @media print {
+    .print-detail { display: inline; }
+    .tip { text-decoration: none; cursor: auto; }
+  }
 </style>
