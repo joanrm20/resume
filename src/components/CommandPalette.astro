@@ -52,7 +52,7 @@ const email = b.email ?? ''
     { label: 'Toggle theme', hint: 'light / dark', run: toggleTheme },
     ...(email ? [{ label: 'Copy email', hint: email, run: copyEmail }] : []),
     ...profiles.map((p) => ({ label: `Open ${p.label}`, hint: 'link', run: () => openLink(p.url) })),
-    { label: 'Download résumé', hint: 'pdf', run: () => go('/jose_ramirez_cv.pdf') },
+    { label: 'Download résumé', hint: 'pdf', run: () => openLink('/jose_ramirez_cv.pdf') },
   ]
 
   let active = 0

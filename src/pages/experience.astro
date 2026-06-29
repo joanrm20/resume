@@ -18,7 +18,7 @@ const b = resume.basics
       <h1 class="name">{b.name}</h1>
       <p class="role">{b.label}</p>
       {b.summary && <p class="lead">{b.summary}</p>}
-      <a href="/jose_ramirez_cv.pdf" class="pdf mono">↓ résumé (pdf)</a>
+      <a href="/jose_ramirez_cv.pdf" class="pdf mono" target="_blank" rel="noopener">↓ résumé (pdf)</a>
     </header>
 
     <Section n="01" title="Experience" id="experience"><Experience /></Section>
@@ -42,12 +42,12 @@ const b = resume.basics
     margin-bottom: 1.6rem;
   }
   .back:hover { color: var(--accent); }
-  .name { font-size: var(--step-3); font-weight: 600; letter-spacing: -0.03em; }
+  .name { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.03em; }
   .role {
     font-family: var(--font-sans);
-    font-size: var(--step-1);
+    font-size: var(--step-0);
     color: var(--fg-soft);
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
   }
   .lead { max-width: var(--measure); margin-top: 1.2rem; color: var(--fg); }
   .pdf {

@@ -7,26 +7,31 @@ const year = new Date().getFullYear()
 <footer class="colophon">
   <div class="wrap inner">
     <p class="links mono" aria-label="Profiles">
+      <a href="/">home</a>
       {b.profiles?.map((p) => (
         <a href={p.url} target="_blank" rel="noopener">{p.network.toLowerCase()}</a>
       ))}
       {b.email && <a href={`mailto:${b.email}`}>email</a>}
     </p>
-    <p class="meta mono">
-      <span class="prompt">{b.name} · {locationString(b.location)}</span><br />
-      <span class="dim">© {year}</span>
-    </p>
+    <p class="meta mono">{b.name} · {locationString(b.location)} · © {year}</p>
   </div>
 </footer>
 
 <style>
-  .colophon { border-top: 1px solid var(--line); background: var(--bg-soft); padding-block: 2.5rem; margin-top: 1rem; }
-  .inner { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between; align-items: flex-end; }
-  .links { display: flex; flex-wrap: wrap; gap: 1rem; font-size: var(--step--1); }
-  .links a { color: var(--fg-soft); text-decoration: none; }
-  .links a::before { content: '→ '; color: var(--accent); }
-  .links a:hover { color: var(--fg); }
-  .meta { font-size: var(--step--1); line-height: 1.7; text-align: right; }
-  .dim { color: var(--fg-faint); }
-  @media (max-width: 540px) { .meta { text-align: left; } .inner { align-items: flex-start; } }
+  .colophon {
+    border-top: 1px solid var(--line);
+    padding-block: 2.2rem;
+    margin-top: 4rem;
+  }
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.5rem;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 1.3rem; font-size: var(--step--1); }
+  .links a { color: var(--fg-faint); text-decoration: none; }
+  .links a:hover { color: var(--accent); }
+  .meta { font-size: var(--step--1); color: var(--fg-faint); }
 </style>

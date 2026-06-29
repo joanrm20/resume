@@ -29,7 +29,9 @@ const primary = [
     <p class="currently mono"><span class="ckey">// currently</span> → {currently}</p>
 
     <nav class="nav" aria-label="Explore">
-      {primary.map((l) => <a class="primary" href={l.href}>{l.label}</a>)}
+      {primary.map((l) => (
+        <a class="primary" href={l.href} {...(l.href.endsWith('.pdf') ? { target: '_blank', rel: 'noopener' } : {})}>{l.label}</a>
+      ))}
     </nav>
     <nav class="social mono" aria-label="Profiles">
       {profiles.map((p) => <a href={p.url} target="_blank" rel="noopener">{p.network.toLowerCase()}</a>)}
