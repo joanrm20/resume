@@ -28,109 +28,111 @@ const email = b.email ?? ''
 </div>
 
 <script define:vars={{ profiles, email }}>
-  const root = document.getElementById('cmdk')
-  const input = document.getElementById('cmdk-input')
-  const list = document.getElementById('cmdk-list')
-  const trigger = document.getElementById('cmdk-trigger')
-  if (root && input && list) {
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+  const $ = (id) => document.getElementById(id)
 
-    const jump = (sel) => {
-      close()
-      document.querySelector(sel)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' })
-    }
-    const toggleTheme = () => {
-      const el = document.documentElement
-      const cur = el.getAttribute('data-theme') ||
-        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-      const next = cur === 'dark' ? 'light' : 'dark'
-      el.setAttribute('data-theme', next)
-      try { localStorage.setItem('theme', next) } catch {}
-    }
-    const openLink = (url) => window.open(url, '_blank', 'noopener')
-    const copyEmail = async () => {
-      try { await navigator.clipboard.writeText(email) } catch {}
-    }
+  const go = (url) => { closeCmdk(); window.location.href = url }
+  const toggleTheme = () => {
+    const el = document.documentElement
+    const cur = el.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    const next = cur === 'dark' ? 'light' : 'dark'
+    el.setAttribute('data-theme', next)
+    try { localStorage.setItem('theme', next) } catch {}
+  }
+  const openLink = (url) => window.open(url, '_blank', 'noopener')
+  const copyEmail = async () => { try { await navigator.clipboard.writeText(email) } catch {} }
 
-    const commands = [
-      { label: 'Experience', hint: 'section', run: () => jump('#experience') },
-      { label: 'Skills', hint: 'section', run: () => jump('#skills') },
-      { label: 'Education', hint: 'section', run: () => jump('#education') },
-      { label: 'Back to top', hint: '', run: () => jump('body') },
-      { label: 'Toggle theme', hint: 'light / dark', run: toggleTheme },
-      ...(email ? [{ label: 'Copy email', hint: email, run: copyEmail }] : []),
-      ...profiles.map((p) => ({ label: `Open ${p.label}`, hint: 'link', run: () => openLink(p.url) })),
-      { label: 'Download résumé', hint: 'pdf', run: () => { window.location.href = '/jose_ramirez_cv.pdf' } },
-    ]
+  const commands = [
+    { label: 'Home', hint: 'page', run: () => go('/') },
+    { label: 'Experience', hint: 'page', run: () => go('/experience') },
+    { label: 'Writing', hint: 'page', run: () => go('/blog') }, // comment out while drafting
+    { label: 'Skills', hint: 'experience', run: () => go('/experience#skills') },
+    { label: 'Projects', hint: 'experience', run: () => go('/experience#projects') },
+    { label: 'Education', hint: 'experience', run: () => go('/experience#education') },
+    { label: 'Toggle theme', hint: 'light / dark', run: toggleTheme },
+    ...(email ? [{ label: 'Copy email', hint: email, run: copyEmail }] : []),
+    ...profiles.map((p) => ({ label: `Open ${p.label}`, hint: 'link', run: () => openLink(p.url) })),
+    { label: 'Download résumé', hint: 'pdf', run: () => go('/jose_ramirez_cv.pdf') },
+  ]
 
-    let active = 0
-    let filtered = commands
+  let active = 0
+  let filtered = commands
 
-    const render = () => {
-      list.innerHTML = ''
-      filtered.forEach((cmd, i) => {
-        const li = document.createElement('li')
-        li.className = 'cmdk-item' + (i === active ? ' is-active' : '')
-        li.setAttribute('role', 'option')
-        li.setAttribute('aria-selected', String(i === active))
-        li.innerHTML = `<span class="cmdk-label"></span><span class="cmdk-hint mono"></span>`
-        li.querySelector('.cmdk-label').textContent = cmd.label
-        li.querySelector('.cmdk-hint').textContent = cmd.hint
-        li.addEventListener('click', () => run(i))
-        li.addEventListener('mousemove', () => { if (active !== i) { active = i; paint() } })
-        list.appendChild(li)
-      })
-    }
-    const paint = () => {
-      ;[...list.children].forEach((li, i) => {
-        const on = i === active
-        li.classList.toggle('is-active', on)
-        li.setAttribute('aria-selected', String(on))
-        if (on) li.scrollIntoView({ block: 'nearest' })
-      })
-    }
-    const filter = () => {
-      const q = input.value.trim().toLowerCase()
-      filtered = q
-        ? commands.filter((c) => (c.label + ' ' + c.hint).toLowerCase().includes(q))
-        : commands
-      active = 0
-      render()
-    }
-    const run = (i) => {
-      const cmd = filtered[i]
-      if (cmd) { cmd.run() ; if (cmd.label !== 'Toggle theme') close() }
-    }
+  function render() {
+    const list = $('cmdk-list'); if (!list) return
+    list.innerHTML = ''
+    filtered.forEach((cmd, i) => {
+      const li = document.createElement('li')
+      li.className = 'cmdk-item' + (i === active ? ' is-active' : '')
+      li.setAttribute('role', 'option')
+      li.setAttribute('aria-selected', String(i === active))
+      li.innerHTML = `<span class="cmdk-label"></span><span class="cmdk-hint mono"></span>`
+      li.querySelector('.cmdk-label').textContent = cmd.label
+      li.querySelector('.cmdk-hint').textContent = cmd.hint
+      li.addEventListener('click', () => runCmd(i))
+      li.addEventListener('mousemove', () => { if (active !== i) { active = i; paint() } })
+      list.appendChild(li)
+    })
+  }
+  function paint() {
+    const list = $('cmdk-list'); if (!list) return
+    ;[...list.children].forEach((li, i) => {
+      const on = i === active
+      li.classList.toggle('is-active', on)
+      li.setAttribute('aria-selected', String(on))
+      if (on) li.scrollIntoView({ block: 'nearest' })
+    })
+  }
+  function filterCmds() {
+    const input = $('cmdk-input'); if (!input) return
+    const q = input.value.trim().toLowerCase()
+    filtered = q ? commands.filter((c) => (c.label + ' ' + c.hint).toLowerCase().includes(q)) : commands
+    active = 0
+    render()
+  }
+  function runCmd(i) {
+    const cmd = filtered[i]
+    if (cmd) { cmd.run(); if (cmd.label !== 'Toggle theme') closeCmdk() }
+  }
+  function openCmdk() {
+    const root = $('cmdk'), input = $('cmdk-input'); if (!root) return
+    root.hidden = false
+    if (input) input.value = ''
+    filterCmds()
+    requestAnimationFrame(() => input && input.focus())
+  }
+  function closeCmdk() { const root = $('cmdk'); if (root) root.hidden = true }
+  function isOpen() { const root = $('cmdk'); return !!root && !root.hidden }
 
-    function open() {
-      root.hidden = false
-      input.value = ''
-      filter()
-      requestAnimationFrame(() => input.focus())
-    }
-    function close() {
-      root.hidden = true
-      trigger?.focus()
-    }
-    const isOpen = () => !root.hidden
-
+  // Global shortcut — bound once, queries the DOM fresh so it survives view transitions.
+  if (!window.__cmdkKeys) {
+    window.__cmdkKeys = true
     document.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
-        isOpen() ? close() : open()
+        isOpen() ? closeCmdk() : openCmdk()
       } else if (e.key === 'Escape' && isOpen()) {
-        close()
+        closeCmdk()
       }
     })
-    input.addEventListener('input', filter)
+  }
+
+  // Per-page wiring — re-runs after each navigation; the current panel wires once.
+  function wireCmdk() {
+    const root = $('cmdk'), input = $('cmdk-input')
+    if (!root || !input || root.dataset.wired) return
+    root.dataset.wired = '1'
+    input.addEventListener('input', filterCmds)
     input.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown') { e.preventDefault(); active = Math.min(active + 1, filtered.length - 1); paint() }
       else if (e.key === 'ArrowUp') { e.preventDefault(); active = Math.max(active - 1, 0); paint() }
-      else if (e.key === 'Enter') { e.preventDefault(); run(active) }
+      else if (e.key === 'Enter') { e.preventDefault(); runCmd(active) }
     })
-    trigger?.addEventListener('click', open)
-    root.querySelector('[data-cmdk-close]')?.addEventListener('click', close)
+    root.querySelector('[data-cmdk-close]')?.addEventListener('click', closeCmdk)
+    $('cmdk-trigger')?.addEventListener('click', openCmdk)
   }
+  document.addEventListener('astro:page-load', wireCmdk)
+  wireCmdk()
 </script>
 
 <style is:global>
