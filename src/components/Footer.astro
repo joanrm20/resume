@@ -1,5 +1,5 @@
 ---
-import { resume, locationString } from '../lib/resume'
+import { resume } from '../lib/resume'
 
 const b = resume.basics
 const email = b.email ?? ''
@@ -21,7 +21,7 @@ const year = new Date().getFullYear()
       <button type="button" class="kbd" id="footer-cmdk" aria-label="Open command menu">⌘K</button>
     </div>
   </div>
-  <p class="wrap copy mono">© {year} · {b.name} · {locationString(b.location)}</p>
+  <p class="wrap copy mono">© {year} · {b.name}</p>
 </footer>
 
 <script>
