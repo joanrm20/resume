@@ -2,8 +2,9 @@
 
 Source for [joanrm20.me](https://joanrm20.me): a bespoke résumé site built with
 [Astro](https://astro.build), driven by a single [JSON Resume](https://jsonresume.org)
-file (`resume.json`). Editorial typography (Fraunces) with terminal accents
-(JetBrains Mono), light/dark, zero render-blocking JS.
+file (`resume.json`). Space Grotesk + Inter with JetBrains Mono terminal
+accents, light/dark, near-zero JS. A terminal-style landing, an `/experience`
+résumé page, and a `/blog`.
 
 ## Develop
 
@@ -35,8 +36,8 @@ pnpm validate    # check resume.json against the JSON Resume schema
   pnpm tailor path/to/job.txt          # → resume.tailored.json
   pbpaste | pnpm tailor                # JD from clipboard
   ```
-- **`worker/`** — Cloudflare Worker backing the pass-key-gated "chat with my CV"
-  feature. See [`worker/README.md`](worker/README.md).
+- **`.claude/skills/resume-review`** — a `/resume-review` skill that critiques
+  résumé content against the senior/staff hiring bar.
 
 ## Deploy
 

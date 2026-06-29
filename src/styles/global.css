@@ -27,6 +27,8 @@
   --accent: #0f7d51;
   --accent-soft: #e4f2eb;
   --shadow: 0 14px 40px rgba(20, 20, 25, 0.10);
+  --term-dir: #2563eb;
+  --term-link: #0e7490;
 }
 
 @media (prefers-color-scheme: dark) {

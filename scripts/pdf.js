@@ -48,7 +48,7 @@ server.listen(0, async () => {
   try {
     browser = await puppeteer.launch()
     const page = await browser.newPage()
-    await page.goto(`http://localhost:${port}/`, { waitUntil: 'networkidle0' })
+    await page.goto(`http://localhost:${port}/experience/`, { waitUntil: 'networkidle0' })
     await page.emulateMediaType('print')
     const pdf = await page.pdf({ format: 'A4', printBackground: true, preferCSSPageSize: true })
 
