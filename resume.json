@@ -38,10 +38,10 @@
       "url": "https://www.personio.com/",
       "startDate": "2025-10-01",
       "highlights": [
-        "Reduced LCP by 21% by eliminating unused JavaScript and restructuring bundle boundaries across high-traffic product surfaces.",
-        "Defined and owned the frontend integration model for company-wide groups management — shipped the first production use case to all customers and set the pattern for further cross-domain adoption.",
+        "Cut p75 LCP 21% in real-user monitoring (RUM) across high-traffic product surfaces by eliminating unused JavaScript and re-drawing bundle boundaries.",
+        "Defined and owned the frontend integration model for company-wide groups management — shipped the first production use case to all customers and established a pattern now reused across 3+ product domains.",
         "Eliminated dual data-access patterns within domain modules, consolidating integrations under a single GraphQL layer and preventing further architectural drift.",
-        "Leading a domain-wide frontend guidelines and component-foundations initiative to make UI reusable and discoverable across teams."
+        "Driving an effort to connect design-system components directly to product-domain data sources, so teams reuse a single integration instead of re-wiring it — reducing duplication, stale API usage, and UX drift across the system."
       ]
     },
     {
@@ -53,7 +53,7 @@
       "startDate": "2023-11-01",
       "endDate": "2025-10-01",
       "highlights": [
-        "Owned end-to-end frontend delivery of company-wide UI rebrand for one of the largest product domains, coordinating 12+ stakeholders and executing a full-domain release with parallel UI support to ensure behavioral parity at launch.",
+        "Owned end-to-end frontend delivery of the company-wide UI rebrand across my product domain — aligning with the central rebrand program while coordinating 12+ stakeholders and running a full-domain release with parallel UI to ensure parity at launch.",
         "Designed reusable geolocation and mapping infrastructure (location services + UI components), enabling multiple product teams to ship location-based features without duplicating third-party integrations.",
         "Built reusable cross-product components, reducing duplication and improving UX consistency.",
         "Led migration of 5 legacy applications from a monolithic frontend to a modular architecture, clearing architectural bottlenecks that were slowing feature delivery and undermining reliability.",
