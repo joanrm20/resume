@@ -56,7 +56,7 @@
         "Owned end-to-end frontend delivery of the company-wide UI rebrand across my product domain — aligning with the central rebrand program while coordinating 12+ stakeholders and running a full-domain release with parallel UI to ensure parity at launch.",
         "Designed reusable geolocation and mapping infrastructure (location services + UI components), enabling multiple product teams to ship location-based features without duplicating third-party integrations.",
         "Built reusable cross-product components, reducing duplication and improving UX consistency.",
-        "Led migration of 5 legacy applications from a monolithic frontend to a modular architecture, clearing architectural bottlenecks that were slowing feature delivery and undermining reliability.",
+        "Led migration of 5 applications off a legacy frontend monolith onto the modern modular stack, escaping a slow, risky, debt-accumulating codebase in favor of one where features ship reliably.",
         "Established recurring frontend architecture forum to increase cross-team alignment and reduce implementation drift."
       ]
     },
