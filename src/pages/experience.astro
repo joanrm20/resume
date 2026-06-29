@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import Experience from '../components/Experience.astro'
+import Skills from '../components/Skills.astro'
+import Projects from '../components/Projects.astro'
+import Education from '../components/Education.astro'
+import Colophon from '../components/Colophon.astro'
+import { resume } from '../lib/resume'
+
+const b = resume.basics
+---
+
+<Base title={`Experience — ${b.name}`} description={`The work, skills, and projects of ${b.name}.`}>
+  <main>
+    <header class="page-head wrap">
+      <a href="/" class="back mono">← home</a>
+      <h1 class="name">{b.name}</h1>
+      <p class="role">{b.label}</p>
+      {b.summary && <p class="lead">{b.summary}</p>}
+      <a href="/jose_ramirez_cv.pdf" class="pdf mono" target="_blank" rel="noopener">↓ résumé (pdf)</a>
+    </header>
+
+    <Section n="01" title="Experience" id="experience"><Experience /></Section>
+    <Section n="02" title="Skills" id="skills"><Skills /></Section>
+    <Section n="03" title="Projects" id="projects"><Projects /></Section>
+    <Section n="04" title="Education" id="education"><Education /></Section>
+  </main>
+  <Colophon />
+</Base>
+
+<style>
+  .page-head {
+    padding-top: clamp(2.5rem, 2rem + 4vw, 5rem);
+    padding-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  }
+  .back {
+    display: inline-block;
+    font-size: var(--step--1);
+    color: var(--fg-soft);
+    text-decoration: none;
+    margin-bottom: 1.6rem;
+  }
+  .back:hover { color: var(--accent); }
+  .name { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.03em; }
+  .role {
+    font-family: var(--font-sans);
+    font-size: var(--step-0);
+    color: var(--fg-soft);
+    margin-top: 0.3rem;
+  }
+  .lead { max-width: var(--measure); margin-top: 1.2rem; color: var(--fg); }
+  .pdf {
+    display: inline-block;
+    margin-top: 1.4rem;
+    font-size: var(--step--1);
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .pdf:hover { text-decoration: underline; }
+  @media print {
+    .back, .pdf { display: none; }
+  }
+</style>

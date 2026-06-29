@@ -1,0 +1,50 @@
+---
+import { resume } from '../lib/resume'
+
+const projects = resume.projects ?? []
+---
+
+{projects.length > 0 && (
+  <ul class="projects">
+    {projects.map((p) => (
+      <li class="project reveal">
+        <div class="head">
+          <h3 class="name">
+            {p.url ? <a href={p.url} target="_blank" rel="noopener">{p.name}</a> : p.name}
+          </h3>
+          {p.roles?.length ? <span class="role mono">{p.roles.join(', ')}</span> : null}
+        </div>
+        {p.description && <p class="desc">{p.description}</p>}
+        {p.keywords?.length ? (
+          <ul class="tags">
+            {p.keywords.map((k) => <li class="tag mono">{k}</li>)}
+          </ul>
+        ) : null}
+      </li>
+    ))}
+  </ul>
+)}
+
+<style>
+  .projects { list-style: none; display: grid; gap: 1.8rem; }
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+  }
+  .name { font-size: var(--step-1); font-weight: 480; }
+  .name a { text-decoration: none; }
+  .name a:hover { color: var(--accent); }
+  .role { font-size: var(--step--1); color: var(--fg-faint); }
+  .desc { color: var(--fg-soft); margin-top: 0.5rem; max-width: var(--measure); }
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+  .tag {
+    font-size: var(--step--1);
+    padding: 0.22rem 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--fg-soft);
+  }
+</style>

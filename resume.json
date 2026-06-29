@@ -5,7 +5,7 @@
     "label": "Staff Frontend Engineer",
     "image": "https://avatars.githubusercontent.com/u/4033088?v=4",
     "email": "jo.chicho@gmail.com",
-    "summary": "Staff Frontend Engineer with 15+ years in frontend architecture, micro frontends, design systems, and developer experience — focused on building products that are fast, reliable, and actually enjoyable to use.",
+    "summary": "Staff Frontend Engineer building frontend architecture, design systems, and developer experience at scale — turning sprawling, hard-to-change frontends into fast, reliable platforms teams enjoy building on.",
     "location": {
       "city": "Amsterdam Area",
       "countryCode": "NL",
@@ -38,10 +38,10 @@
       "url": "https://www.personio.com/",
       "startDate": "2025-10-01",
       "highlights": [
-        "Starting domain FE guideliness and component foundations effort to establish better reusability and discoverability across domains.",
-        "Reduced LCP by 21% by eliminating unused JavaScript and restructuring bundle boundaries across high-traffic product surfaces.",
-        "Defined and owned the frontend integration model for company-wide groups management, shipping the first production use case to 100% of customers and establishing scalable patterns for more cross-domain adoption.",
-        "Eliminated dual data-access patterns within domain modules, consolidating integrations under a single GraphQL layer and preventing further architectural drift."
+        "Cut p75 LCP 21% in real-user monitoring (RUM) across high-traffic product surfaces by eliminating unused JavaScript and re-drawing bundle boundaries.",
+        "Defined and owned the frontend integration model for company-wide groups management — shipped the first production use case to all customers and established a pattern now reused across 3+ product domains.",
+        "Eliminated dual data-access patterns within domain modules, consolidating integrations under a single GraphQL layer and preventing further architectural drift.",
+        "Driving an effort to connect design-system components directly to product-domain data sources, so teams reuse a single integration instead of re-wiring it — reducing duplication, stale API usage, and UX drift across the system."
       ]
     },
     {
@@ -53,10 +53,10 @@
       "startDate": "2023-11-01",
       "endDate": "2025-10-01",
       "highlights": [
-        "Owned end-to-end frontend delivery of company-wide UI rebrand for one of the largest product domains, coordinating 12+ stakeholders and executing a full-domain release with parallel UI support to ensure behavioral parity at launch.",
+        "Owned end-to-end frontend delivery of the company-wide UI rebrand across my product domain — aligning with the central rebrand program while coordinating 12+ stakeholders and running a full-domain release with parallel UI to ensure parity at launch.",
         "Designed reusable geolocation and mapping infrastructure (location services + UI components), enabling multiple product teams to ship location-based features without duplicating third-party integrations.",
         "Built reusable cross-product components, reducing duplication and improving UX consistency.",
-        "Led migration of 5 legacy applications from monolithic frontend to modular architecture, removing architectural bottlenecks that were slowing feature delivery and reducing system reliability.",
+        "Led migration of 5 applications off a legacy frontend monolith onto the modern modular stack, escaping a slow, risky, debt-accumulating codebase in favor of one where features ship reliably.",
         "Established recurring frontend architecture forum to increase cross-team alignment and reduce implementation drift."
       ]
     },
@@ -73,8 +73,7 @@
         "Contributed to architectural evolution of landing pages micro-frontend toward Server-Driven UI (Next.js), decoupling layout control from frontend release cycles.",
         "Drove adoption of the Design System library across 3+ frontend teams, conducting guidance and code reviews that improved brand consistency, accessibility compliance, and reduced per-team UI implementation time.",
         "Optimized CI pipelines for large monorepo, improving feedback reliability and strengthening release confidence.",
-        "Standardized automated release workflows for cross-team libraries, reducing manual publishing errors and version drift.",
-        "Hands-on contributor, part of a team of +10 engineers for multiple projects in the growth domain."
+        "Standardized automated release workflows for cross-team libraries, reducing manual publishing errors and version drift."
       ]
     },
     {
@@ -87,7 +86,7 @@
       "endDate": "2022-03-01",
       "highlights": [
         "Delivered features for landing pages micro-frontend using React, TypeScript, and CSS-in-JS within a multi-team growth domain.",
-        "Createe Design tokens naming standardization for the DAZN Design System.",
+        "Created Design tokens naming standardization for the DAZN Design System.",
         "Led development of core design system components and design tokens, establishing atomic component patterns adopted across web applications.",
         "Built shared internationalization utilities for formatting dates, times, and currencies across product surfaces.",
         "Presented architectural updates and proposals in frontend guild and technical council forums."
@@ -186,7 +185,7 @@
   ],
   "education": [
     {
-      "institution": "Universidad Latinoamerica de Ciencia y Tecnologia",
+      "institution": "Universidad Latinoamericana de Ciencia y Tecnología",
       "url": "https://www.ulacit.ac.cr/",
       "area": "Software Engineering",
       "studyType": "Degree (Coursework completed, degree not conferred)",

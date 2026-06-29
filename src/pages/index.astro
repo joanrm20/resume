@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro'
+import { resume } from '../lib/resume'
+
+const b = resume.basics
+const email = b.email ?? ''
+const profiles = b.profiles ?? []
+
+const currently = 'core product · Employees & Organizations @ Personio'
+
+const primary = [
+  { label: 'experience', href: '/experience' },
+  { label: 'writing', href: '/blog' },
+  { label: 'résumé', href: '/jose_ramirez_cv.pdf' },
+]
+---
+
+<Base>
+  <main class="home wrap">
+    <p class="shell mono" aria-hidden="true">
+      <span class="usr">jose@joanrm20</span> <span class="pth">~</span> <span class="pct">%</span> <span id="cmd-whoami">whoami</span><span class="caret"></span>
+    </p>
+
+    <h1 class="name">{b.name}</h1>
+    <p class="role">{b.label}</p>
+
+    {b.summary && <p class="about">{b.summary}</p>}
+
+    <p class="currently mono"><span class="ckey">// currently</span> → {currently}</p>
+
+    <nav class="nav" aria-label="Explore">
+      {primary.map((l) => (
+        <a class="primary" href={l.href} {...(l.href.endsWith('.pdf') ? { target: '_blank', rel: 'noopener' } : {})}>{l.label}</a>
+      ))}
+    </nav>
+    <nav class="social mono" aria-label="Profiles">
+      {profiles.map((p) => <a href={p.url} target="_blank" rel="noopener">{p.network.toLowerCase()}</a>)}
+      {email && <a href={`mailto:${email}`}>email</a>}
+    </nav>
+
+    <div class="meta mono">
+      <span class="time" id="local-time">Amsterdam · --:--</span>
+      <button type="button" class="kbd-hint" id="open-cmdk" aria-label="Open command menu">⌘K</button>
+    </div>
+  </main>
+</Base>
+
+<script>
+  function initHome() {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const who = document.getElementById('cmd-whoami')
+    if (who && !reduce && !who.dataset.typed) {
+      who.dataset.typed = '1'
+      const text = 'whoami'
+      who.textContent = ''
+      let i = 0
+      const step = () => {
+        who.textContent = text.slice(0, ++i)
+        if (i < text.length) setTimeout(step, 75)
+      }
+      setTimeout(step, 280)
+    }
+
+    const timeEl = document.getElementById('local-time')
+    if (timeEl) {
+      const fmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Amsterdam',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
+      const tick = () => { timeEl.textContent = `Amsterdam · ${fmt.format(new Date())}` }
+      tick()
+      clearInterval((window as any).__clock)
+      ;(window as any).__clock = setInterval(tick, 15000)
+    }
+
+    const btn = document.getElementById('open-cmdk')
+    if (btn && !btn.dataset.wired) {
+      btn.dataset.wired = '1'
+      btn.addEventListener('click', () =>
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true })),
+      )
+    }
+  }
+  document.addEventListener('astro:page-load', initHome)
+</script>
+
+<style is:global>
+  /* one ⌘K affordance on the landing — the inline one in the meta row */
+  body:has(main.home) .cmdk-trigger { display: none; }
+</style>
+
+<style>
+  .home {
+    padding-top: clamp(4rem, 3rem + 8vw, 9rem);
+    padding-bottom: 4rem;
+  }
+
+  .shell { font-size: var(--step--1); color: var(--fg-faint); }
+  .usr { color: var(--accent); }
+  .pth { color: var(--fg-soft); }
+  .pct { color: var(--fg-faint); }
+  .caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 0.25em;
+    background: var(--accent);
+    vertical-align: -0.16em;
+    animation: blink 1.15s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
+
+  .name {
+    font-size: var(--step-2);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    margin-top: 1.7rem;
+  }
+  .role {
+    font-size: var(--step-0);
+    color: var(--fg-soft);
+    margin-top: 0.35rem;
+  }
+
+  .about {
+    max-width: 56ch;
+    font-size: var(--step-0);
+    line-height: 1.8;
+    color: var(--fg-soft);
+    margin-top: 2.8rem;
+  }
+
+  .currently { font-size: var(--step--1); color: var(--fg-faint); margin-top: 1.9rem; }
+  .currently .ckey { color: var(--fg-soft); }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.7rem;
+    margin-top: 2.8rem;
+  }
+  .nav .primary {
+    font-size: var(--step-0);
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .nav .primary:hover { color: var(--accent); }
+
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+    margin-top: 1.3rem;
+    font-size: var(--step--1);
+  }
+  .social a { color: var(--fg-faint); text-decoration: none; }
+  .social a:hover { color: var(--accent); }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: clamp(3rem, 2rem + 4vw, 5rem);
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-size: var(--step--1);
+    color: var(--fg-faint);
+  }
+  .kbd-hint {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    color: var(--fg-soft);
+    font: inherit;
+    cursor: pointer;
+  }
+  .kbd-hint:hover { border-color: var(--accent); color: var(--accent); }
+</style>

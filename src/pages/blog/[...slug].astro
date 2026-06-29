@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro'
+import Colophon from '../../components/Colophon.astro'
+import { getCollection, render } from 'astro:content'
+import { resume } from '../../lib/resume'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft)
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })
+---
+
+<Base title={`${post.data.title} — ${resume.basics.name}`} description={post.data.description}>
+  <main class="wrap article">
+    <a href="/blog" class="back mono">← writing</a>
+    <h1>{post.data.title}</h1>
+    <time class="pdate mono" datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time>
+    <div class="prose">
+      <Content />
+    </div>
+  </main>
+  <Colophon />
+</Base>
+
+<style>
+  .article { padding-top: clamp(2.5rem, 2rem + 4vw, 5rem); max-width: 680px; }
+  .back { display: inline-block; font-size: var(--step--1); color: var(--fg-soft); text-decoration: none; margin-bottom: 1.6rem; }
+  .back:hover { color: var(--accent); }
+  h1 { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.03em; }
+  .pdate { display: block; margin-top: 0.6rem; font-size: var(--step--1); color: var(--fg-faint); }
+  .prose { margin-top: 2rem; padding-bottom: 3rem; }
+</style>
+
+<style is:global>
+  .prose > * + * { margin-top: 1.1rem; }
+  .prose h2 { font-size: var(--step-2); font-weight: 600; margin-top: 2.2rem; letter-spacing: -0.02em; }
+  .prose h3 { font-size: var(--step-1); font-weight: 600; margin-top: 1.8rem; }
+  .prose p, .prose li { color: var(--fg); line-height: 1.7; }
+  .prose ul, .prose ol { padding-left: 1.3rem; }
+  .prose li + li { margin-top: 0.4rem; }
+  .prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .prose strong { font-weight: 600; }
+  .prose blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    color: var(--fg-soft);
+    font-style: italic;
+  }
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--bg-soft);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+  .prose pre {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    font-size: var(--step--1);
+  }
+  .prose pre code { background: none; padding: 0; }
+</style>

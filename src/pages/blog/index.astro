@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro'
+import Colophon from '../../components/Colophon.astro'
+import { getCollection } from 'astro:content'
+import { resume } from '../../lib/resume'
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+)
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })
+---
+
+<Base title={`Writing — ${resume.basics.name}`} description="Posts and notes on frontend, design systems, and developer experience.">
+  <main class="wrap">
+    <header class="page-head">
+      <a href="/" class="back mono">← home</a>
+      <h1>Writing</h1>
+    </header>
+
+    <ul class="posts">
+      {posts.map((p) => (
+        <li class="post">
+          <a class="post-link" href={`/blog/${p.id}`}>
+            <span class="ptitle">{p.data.title}</span>
+            <time class="pdate mono" datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
+          </a>
+          {p.data.description && <p class="pdesc">{p.data.description}</p>}
+        </li>
+      ))}
+      {posts.length === 0 && <li class="empty mono">No posts yet. Check back soon.</li>}
+    </ul>
+  </main>
+  <Colophon />
+</Base>
+
+<style>
+  .page-head {
+    padding-top: clamp(2.5rem, 2rem + 4vw, 5rem);
+    padding-bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
+  }
+  .back { display: inline-block; font-size: var(--step--1); color: var(--fg-soft); text-decoration: none; margin-bottom: 1.6rem; }
+  .back:hover { color: var(--accent); }
+  h1 { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.03em; }
+  .posts { list-style: none; display: grid; gap: 1.8rem; padding-block: 1.5rem 3rem; }
+  .post-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .ptitle { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; }
+  .post-link:hover .ptitle { color: var(--accent); }
+  .pdate { font-size: var(--step--1); color: var(--fg-faint); white-space: nowrap; }
+  .pdesc { color: var(--fg-soft); margin-top: 0.4rem; max-width: var(--measure); }
+  .empty { color: var(--fg-faint); }
+</style>
