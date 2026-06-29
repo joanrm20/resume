@@ -23,7 +23,7 @@ const primary = [
 
     {b.summary && <p class="about" set:html={emphasize(b.summary)} />}
 
-    <p class="currently mono"><span class="ckey">// currently</span> → {currently}</p>
+    <p class="currently mono"><span class="dot" aria-hidden="true"></span><span class="ckey">currently</span> → {currently}</p>
 
     <nav class="nav" aria-label="Explore">
       {primary.map((l) => (
@@ -93,6 +93,27 @@ const primary = [
   }
   .currently { font-size: var(--step--1); color: var(--fg-faint); margin-top: 1.9rem; }
   .currently .ckey { color: var(--fg-soft); }
+  .dot {
+    display: inline-block;
+    position: relative;
+    width: 7px;
+    height: 7px;
+    margin-right: 0.55em;
+    border-radius: 50%;
+    background: var(--accent);
+    vertical-align: 0.05em;
+  }
+  .dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .dot::after { animation: ping 1.9s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  }
+  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
   .nav {
     display: flex;
     flex-wrap: wrap;
