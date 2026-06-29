@@ -113,10 +113,23 @@ a:hover { text-decoration-color: var(--accent); }
 .section-head { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.6rem; }
 .section-head h2 { font-size: var(--step-2); }
 
-/* Reveal-on-scroll (progressive: visible by default if JS/animation unsupported) */
+/* Reveal-on-scroll as a pure enhancement: the hidden state lives in the
+   keyframe (not the base rule), so if the scroll-timeline animation is
+   unsupported or mangled by minification, content stays fully visible. */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(14px); animation: reveal linear forwards; animation-timeline: view(); animation-range: entry 0% cover 22%; }
-  @keyframes reveal { to { opacity: 1; transform: none; } }
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation-name: reveal-in;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+    @keyframes reveal-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
 }
 
 /* Print / PDF — force light, drop chrome, avoid awkward page breaks */
