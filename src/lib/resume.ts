@@ -108,6 +108,17 @@ export function locationString(loc?: Basics['location']): string {
   return [loc.city, loc.region, loc.countryCode].filter(Boolean).join(', ')
 }
 
+const EMPHASIS = ['frontend architecture', 'design systems', 'developer experience']
+
+/** Wrap the craft keywords in the summary for subtle emphasis (returns HTML). */
+export function emphasize(text: string): string {
+  let out = text
+  for (const phrase of EMPHASIS) {
+    out = out.replaceAll(phrase, `<span class="hi">${phrase}</span>`)
+  }
+  return out
+}
+
 /** Compact Markdown rendering, shared by /llms.txt and LLM grounding. */
 export function toMarkdown(r: Resume = resume): string {
   const b = r.basics

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
-import { resume } from '../lib/resume'
+import { resume, emphasize } from '../lib/resume'
 
 const b = resume.basics
 const currently = 'core product · Employees & Organizations @ Personio'
@@ -21,7 +21,7 @@ const primary = [
     <h1 class="name">{b.name}</h1>
     <p class="role">{b.label}</p>
 
-    {b.summary && <p class="about">{b.summary}</p>}
+    {b.summary && <p class="about" set:html={emphasize(b.summary)} />}
 
     <p class="currently mono"><span class="ckey">// currently</span> → {currently}</p>
 

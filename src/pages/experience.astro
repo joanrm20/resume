@@ -5,7 +5,7 @@ import Experience from '../components/Experience.astro'
 import Skills from '../components/Skills.astro'
 import Projects from '../components/Projects.astro'
 import Education from '../components/Education.astro'
-import { resume } from '../lib/resume'
+import { resume, emphasize } from '../lib/resume'
 
 const b = resume.basics
 ---
@@ -16,7 +16,7 @@ const b = resume.basics
       <a href="/" class="back mono">← home</a>
       <h1 class="name">{b.name}</h1>
       <p class="role">{b.label}</p>
-      {b.summary && <p class="lead">{b.summary}</p>}
+      {b.summary && <p class="lead" set:html={emphasize(b.summary)} />}
       <a href="/jose_ramirez_cv.pdf" class="pdf mono" target="_blank" rel="noopener">↓ résumé (pdf)</a>
     </header>
 
@@ -47,7 +47,7 @@ const b = resume.basics
     color: var(--fg-soft);
     margin-top: 0.3rem;
   }
-  .lead { max-width: var(--measure); margin-top: 1.2rem; color: var(--fg); }
+  .lead { max-width: var(--measure); margin-top: 1.2rem; color: var(--fg-soft); }
   .pdf {
     display: inline-block;
     margin-top: 1.4rem;

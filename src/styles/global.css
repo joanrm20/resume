@@ -78,7 +78,13 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Emphasized craft keywords in the bio summary. */
+.hi { color: var(--fg); }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.07; letter-spacing: -0.022em; }
 
