@@ -1,5 +1,6 @@
 ---
 import { resume, dateRange } from '../lib/resume'
+import MaybeLink from './MaybeLink.astro'
 ---
 
 <ul class="edu">
@@ -12,9 +13,9 @@ import { resume, dateRange } from '../lib/resume'
       : null
     return (
       <li class="item reveal">
-        <div class="head">
+        <div class="row-between">
           <h3 class="inst">
-            {e.url ? <a href={e.url} target="_blank" rel="noopener">{e.institution}</a> : e.institution}
+            <MaybeLink href={e.url}>{e.institution}</MaybeLink>
           </h3>
           <span class="dates mono">{dateRange(e.startDate, e.endDate)}</span>
         </div>
@@ -30,17 +31,9 @@ import { resume, dateRange } from '../lib/resume'
 
 <style>
   .edu { list-style: none; display: grid; gap: 1.4rem; }
-  .head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.25rem 1rem;
-  }
   .inst { font-size: var(--step-0); font-weight: 480; font-family: var(--font-display); }
-  .inst a { text-decoration: none; }
-  .inst a:hover { text-decoration: underline; }
-  .dates { font-size: var(--step--1); color: var(--fg-faint); white-space: nowrap; }
+  .inst :global(a) { text-decoration: none; }
+  .inst :global(a):hover { text-decoration: underline; }
   .study { font-size: var(--step--1); color: var(--accent); margin-top: 0.2rem; }
   .tip {
     position: relative;

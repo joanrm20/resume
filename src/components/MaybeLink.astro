@@ -1,0 +1,15 @@
+---
+/**
+ * Renders an anchor when `href` is set, otherwise the bare content.
+ * Style the link from the parent with a `:global(a)` descendant selector,
+ * since the <a> lands outside the parent's scoped styles.
+ */
+interface Props {
+  href?: string
+  external?: boolean
+}
+const { href, external = true } = Astro.props
+const attrs = external ? { target: '_blank', rel: 'noopener' } : {}
+---
+
+{href ? <a href={href} {...attrs}><slot /></a> : <slot />}

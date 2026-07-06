@@ -1,17 +1,18 @@
 ---
 import { resume, dateRange } from '../lib/resume'
+import MaybeLink from './MaybeLink.astro'
 ---
 
 <ol class="timeline">
   {resume.work.map((job) => (
     <li class="entry reveal">
       <div class="node" aria-hidden="true"></div>
-      <div class="head">
+      <div class="row-between">
         <h3 class="position">{job.position}</h3>
         <span class="dates mono">{dateRange(job.startDate, job.endDate)}</span>
       </div>
       <p class="org mono">
-        {job.url ? <a href={job.url} target="_blank" rel="noopener">{job.name}</a> : job.name}
+        <MaybeLink href={job.url}>{job.name}</MaybeLink>
         {job.location && <span class="loc"> · {job.location}</span>}
       </p>
       {job.description && <p class="desc">{job.description}</p>}
@@ -46,22 +47,14 @@ import { resume, dateRange } from '../lib/resume'
     background: var(--bg);
     border: 2px solid var(--accent);
   }
-  .head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.25rem 1rem;
-  }
   .position { font-size: var(--step-1); font-weight: 480; }
-  .dates { font-size: var(--step--1); color: var(--fg-faint); white-space: nowrap; }
   .org {
     font-size: var(--step--1);
     color: var(--accent);
     margin-top: 0.15rem;
   }
-  .org a { text-decoration: none; }
-  .org a:hover { text-decoration: underline; }
+  .org :global(a) { text-decoration: none; }
+  .org :global(a):hover { text-decoration: underline; }
   .loc { color: var(--fg-faint); }
   .desc { color: var(--fg-soft); margin-top: 0.6rem; max-width: var(--measure); }
   .highlights {

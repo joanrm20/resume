@@ -7,7 +7,7 @@ import { resume } from '../lib/resume'
     <div class="group reveal">
       <h3 class="gname mono">{group.name}</h3>
       <ul class="tags">
-        {group.keywords?.map((k) => <li class="tag mono">{k}</li>)}
+        {group.keywords?.map((k) => <li class="pill tag mono">{k}</li>)}
       </ul>
     </div>
   ))}
@@ -24,10 +24,7 @@ import { resume } from '../lib/resume'
   .gname::before { content: '# '; color: var(--accent); }
   .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; }
   .tag {
-    font-size: var(--step--1);
     padding: 0.28rem 0.6rem;
-    border: 1px solid var(--line);
-    border-radius: 6px;
     color: var(--fg);
     background: var(--bg-soft);
     transition: border-color 0.18s ease, color 0.18s ease;

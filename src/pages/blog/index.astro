@@ -1,21 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro'
 import { getCollection } from 'astro:content'
-import { resume } from '../../lib/resume'
+import { resume, formatPostDate } from '../../lib/resume'
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 )
-
-const fmt = (d: Date) =>
-  d.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })
 ---
 
 <Base title={`Writing — ${resume.basics.name}`} description="Posts and notes on frontend, design systems, and developer experience.">
   <main class="wrap">
     <header class="page-head">
       <a href="/" class="back mono">← home</a>
-      <h1>Writing</h1>
+      <h1 class="page-title">Writing</h1>
     </header>
 
     {posts.length > 0 ? (
@@ -24,7 +21,7 @@ const fmt = (d: Date) =>
           <li class="post">
             <a class="post-link" href={`/blog/${p.id}`}>
               <span class="ptitle">{p.data.title}</span>
-              <time class="pdate mono" datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
+              <time class="pdate mono" datetime={p.data.pubDate.toISOString()}>{formatPostDate(p.data.pubDate)}</time>
             </a>
             {p.data.description && <p class="pdesc">{p.data.description}</p>}
           </li>
@@ -48,9 +45,6 @@ const fmt = (d: Date) =>
     padding-top: clamp(2.5rem, 2rem + 4vw, 5rem);
     padding-bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
   }
-  .back { display: inline-block; font-size: var(--step--1); color: var(--fg-soft); text-decoration: none; margin-bottom: 1.6rem; }
-  .back:hover { color: var(--accent); }
-  h1 { font-size: var(--step-2); font-weight: 500; letter-spacing: -0.03em; }
   .posts { list-style: none; display: grid; gap: 1.8rem; padding-block: 1.5rem 3rem; }
   .post-link {
     display: flex;
@@ -73,19 +67,4 @@ const fmt = (d: Date) =>
   .ascii .bar { display: block; white-space: nowrap; }
   .ascii .fill { color: var(--accent); }
   .ascii .empty { color: var(--line); }
-  .dot {
-    display: inline-block;
-    position: relative;
-    width: 7px;
-    height: 7px;
-    margin-right: 0.6em;
-    border-radius: 50%;
-    background: var(--accent);
-    vertical-align: 0.05em;
-  }
-  .dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); }
-  @media (prefers-reduced-motion: no-preference) {
-    .dot::after { animation: ping 1.9s cubic-bezier(0, 0, 0.2, 1) infinite; }
-  }
-  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
 </style>

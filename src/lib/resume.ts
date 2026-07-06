@@ -1,6 +1,8 @@
 import data from '../../resume.json'
 
 export const SITE_URL = 'https://joanrm20.me'
+export const PDF_PATH = '/jose_ramirez_cv.pdf'
+export const SHELL_USER = 'jose@joanrm20'
 
 export interface Profile {
   network: string
@@ -96,6 +98,11 @@ export function formatDate(value?: string): string {
 
 export function dateRange(start?: string, end?: string): string {
   return `${formatDate(start)} — ${formatDate(end)}`
+}
+
+/** Localized blog post date, e.g. "Nov 3, 2025" (short) or "November 3, 2025" (long). */
+export function formatPostDate(date: Date, month: 'short' | 'long' = 'short'): string {
+  return date.toLocaleDateString('en', { year: 'numeric', month, day: 'numeric' })
 }
 
 /** Whole years between two dates, e.g. "15+ years" for the longest span. */

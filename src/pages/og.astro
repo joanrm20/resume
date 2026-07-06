@@ -1,7 +1,7 @@
 ---
 import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/jetbrains-mono'
-import { resume } from '../lib/resume'
+import { resume, SHELL_USER } from '../lib/resume'
 
 const b = resume.basics
 ---
@@ -53,7 +53,7 @@ const b = resume.basics
   </head>
   <body>
     <div class="bar"></div>
-    <p class="prompt"><span class="u">jose@joanrm20</span> ~ % <span class="c">whoami</span></p>
+    <p class="prompt"><span class="u">{SHELL_USER}</span> ~ % <span class="c">whoami</span></p>
     <h1 class="name">{b.name}</h1>
     <p class="role">{b.label}</p>
     <p class="foot">joanrm20.me</p>

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
-import { resume, emphasize } from '../lib/resume'
+import { resume, emphasize, PDF_PATH, SHELL_USER } from '../lib/resume'
 
 const b = resume.basics
 const currently = 'core product · Employees & Organizations @ Personio'
@@ -8,17 +8,17 @@ const currently = 'core product · Employees & Organizations @ Personio'
 const primary = [
   { label: 'experience', href: '/experience' },
   { label: 'writing', href: '/blog' },
-  { label: 'résumé', href: '/jose_ramirez_cv.pdf' },
+  { label: 'résumé', href: PDF_PATH, external: true },
 ]
 ---
 
 <Base>
   <main class="home wrap">
     <p class="shell mono" aria-hidden="true">
-      <span class="usr">jose@joanrm20</span> <span class="pth">~</span> <span class="pct">%</span> <span id="cmd-whoami">whoami</span><span class="caret"></span>
+      <span class="usr">{SHELL_USER}</span> <span class="pth">~</span> <span class="pct">%</span> <span id="cmd-whoami">whoami</span><span class="caret"></span>
     </p>
 
-    <h1 class="name">{b.name} <span class="wave" aria-hidden="true">👋</span></h1>
+    <h1 class="name page-title">{b.name} <span class="wave" aria-hidden="true">👋</span></h1>
     <p class="role">{b.label}</p>
 
     {b.summary && <p class="about" set:html={emphasize(b.summary)} />}
@@ -27,7 +27,7 @@ const primary = [
 
     <nav class="nav" aria-label="Explore">
       {primary.map((l) => (
-        <a class="primary" href={l.href} {...(l.href.endsWith('.pdf') ? { target: '_blank', rel: 'noopener' } : {})}>{l.label}</a>
+        <a class="primary" href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}>{l.label}</a>
       ))}
     </nav>
   </main>
@@ -73,12 +73,7 @@ const primary = [
   @keyframes blink { 50% { opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
 
-  .name {
-    font-size: var(--step-2);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    margin-top: 1.7rem;
-  }
+  .name { margin-top: 1.7rem; }
   .wave { display: inline-block; transform-origin: 70% 70%; }
   @media (prefers-reduced-motion: no-preference) {
     .wave { animation: wave 1.8s ease-in-out 0.5s 1; }
@@ -103,27 +98,6 @@ const primary = [
   }
   .currently { font-size: var(--step--1); color: var(--fg-faint); margin-top: 1.9rem; }
   .currently .ckey { color: var(--fg-soft); }
-  .dot {
-    display: inline-block;
-    position: relative;
-    width: 7px;
-    height: 7px;
-    margin-right: 0.55em;
-    border-radius: 50%;
-    background: var(--accent);
-    vertical-align: 0.05em;
-  }
-  .dot::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .dot::after { animation: ping 1.9s cubic-bezier(0, 0, 0.2, 1) infinite; }
-  }
-  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
   .nav {
     display: flex;
     flex-wrap: wrap;

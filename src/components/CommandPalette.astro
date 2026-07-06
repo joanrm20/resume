@@ -1,5 +1,5 @@
 ---
-import { resume } from '../lib/resume'
+import { resume, PDF_PATH } from '../lib/resume'
 
 const b = resume.basics
 const profiles = (b.profiles ?? []).map((p) => ({ label: p.network, url: p.url }))
@@ -23,7 +23,7 @@ const email = b.email ?? ''
   </div>
 </div>
 
-<script define:vars={{ profiles, email }}>
+<script define:vars={{ profiles, email, pdfPath: PDF_PATH }}>
   const $ = (id) => document.getElementById(id)
 
   const go = (url) => { closeCmdk(); window.location.href = url }
@@ -48,7 +48,7 @@ const email = b.email ?? ''
     { label: 'Toggle theme', hint: 'light / dark', run: toggleTheme },
     ...(email ? [{ label: 'Copy email', hint: email, run: copyEmail }] : []),
     ...profiles.map((p) => ({ label: `Open ${p.label}`, hint: 'link', run: () => openLink(p.url) })),
-    { label: 'Download résumé', hint: 'pdf', run: () => openLink('/jose_ramirez_cv.pdf') },
+    { label: 'Download résumé', hint: 'pdf', run: () => openLink(pdfPath) },
   ]
 
   let active = 0
