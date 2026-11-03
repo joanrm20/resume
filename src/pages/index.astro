@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro'
 import { resume, emphasize, PDF_PATH, SHELL_USER } from '../lib/resume'
 
 const b = resume.basics
+const intro = b.tagline ?? b.summary
 const currently = 'core product · Employees & Organizations @ Personio'
 
 const primary = [
@@ -21,7 +22,7 @@ const primary = [
     <h1 class="name page-title">{b.name} <span class="wave" aria-hidden="true">👋</span></h1>
     <p class="role">{b.label}</p>
 
-    {b.summary && <p class="about" set:html={emphasize(b.summary)} />}
+    {intro && <p class="about" set:html={emphasize(intro)} />}
 
     <p class="currently mono"><span class="dot" aria-hidden="true"></span><span class="ckey">currently</span> → {currently}</p>
 

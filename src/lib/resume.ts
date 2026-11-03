@@ -16,6 +16,8 @@ export interface Basics {
   image?: string
   email?: string
   summary?: string
+  /** Short one-liner for the home hero; falls back to summary. */
+  tagline?: string
   location?: { city?: string; region?: string; countryCode?: string }
   profiles?: Profile[]
 }
