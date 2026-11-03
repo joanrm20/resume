@@ -33,9 +33,5 @@
     "@fontsource-variable/space-grotesk": "5.3.0",
     "astro": "7.4.5"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "puppeteer"
-    ]
-  }
+  "packageManager": "pnpm@11.24.0"
 }
