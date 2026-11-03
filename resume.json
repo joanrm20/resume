@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Jose Ramirez Mora",
-    "label": "Staff Engineer · product and platform",
+    "label": "Staff Software Engineer",
     "image": "https://avatars.githubusercontent.com/u/4033088?v=4",
     "email": "jo.chicho@gmail.com",
     "url": "https://joanrm20.me",
-    "summary": "Staff engineer with 15+ years who owns product surfaces end to end and builds the platforms other teams depend on: frontend architecture, design systems, data access and release tooling. At Personio and DAZN I built design-system components and integration patterns that 4+ teams adopted, migrated five applications off a legacy monolith, moved a product domain's data access from legacy REST to the company GraphQL layer (5+ entities, 20+ endpoints retired), and cut p75 LCP 21% in production. Before that I designed a backend-for-frontend service and a logging library that became platform standards, and led full-stack teams for five years.",
-    "tagline": "Staff Engineer building frontend architecture, design systems, and developer experience at scale — turning sprawling, hard-to-change products into fast, reliable platforms teams enjoy building on.",
+    "summary": "Staff engineer with 15+ years building the platforms product teams depend on: frontend architecture, design systems, data access and developer experience. I work across team boundaries, turning duplicated, hard-to-change systems into shared foundations, from monolith migrations and GraphQL data layers to design systems adopted across multiple teams.",
+    "tagline": "Staff Software Engineer building the platforms product teams ship on — design systems, data access, frontend architecture and developer experience — turning sprawling, hard-to-change products into fast, reliable systems teams enjoy building on.",
     "location": {
       "city": "Amsterdam",
       "countryCode": "NL"
@@ -39,10 +39,10 @@
       "url": "https://www.personio.com/",
       "startDate": "2025-10-01",
       "highlights": [
-        "Migrated my domain's data access off legacy REST onto the company-wide GraphQL layer: 5+ entities, 20+ endpoints retired, done incrementally alongside feature work with no dedicated project. Ended the dual data-access pattern that was driving architectural drift.",
-        "Cut p75 LCP 21% in real-user monitoring across high-traffic surfaces by eliminating unused JavaScript and redrawing bundle boundaries.",
-        "Defined and own the frontend integration model for company-wide groups management; shipped the first production use case to all customers; the pattern is now reused across 4+ product domains.",
-        "Driving the connection of design-system components directly to product-domain data sources, so teams reuse one integration instead of re-wiring it: less duplication, stale API usage and UX drift."
+       "Migrated my domain's data access off legacy REST onto the company-wide GraphQL layer: 5+ entities, 20+ endpoints retired, done incrementally alongside feature work with no dedicated project. Ended the dual data-access pattern that was driving architectural drift.",
+       "Defined and own the frontend integration model for company-wide group management; shipped the first production use case to all customers; the pattern is now reused across 4+ product domains.",
+       "Leading and building data-connected design-system components that give product teams one consistent, ready-to-use implementation: less duplication, stale API usage and UX drift.",
+       "Cut p75 LCP by 21% in real-user monitoring across high-traffic surfaces by eliminating unused JavaScript and redrawing bundle boundaries."
       ]
     },
     {
