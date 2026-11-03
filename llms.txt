@@ -44,7 +44,7 @@ Global sports streaming.
 - Designed and built governance tooling for the headless CMS architecture, letting multiple teams create and manage content models with consistent validation and version control.
 - Drove the landing-pages micro-frontend toward Server-Driven UI on Next.js, decoupling layout control from frontend release cycles.
 - Drove Design System adoption across 3+ frontend teams through guidance and code review: brand consistency, accessibility compliance, less per-team UI time.
-- Optimized monorepo CI and standardized cross-team library releases, cutting manual publishing errors and version drift.
+- Optimized CI for a large monorepo, making build feedback more reliable, and standardized automated release workflows for cross-team libraries, cutting manual publishing errors and version drift.
 
 ### Senior Frontend Engineer · DAZN
 *May 2021 — Mar 2022 · Amsterdam, NL*
@@ -66,7 +66,7 @@ Online travel agency.
 *Mar 2019 — Jun 2019 · Amsterdam, NL*
 Online travel agency.
 
-- Designed the backend-for-frontend service that became the standard adopted across the platform.
+- Designed the Node.js backend-for-frontend service that became the standard adopted across the platform.
 - Created the shared server- and client-side logging library that aligned logging standards company-wide.
 
 ### Frontend Engineer · Travix
