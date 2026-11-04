@@ -1,4 +1,4 @@
-# Jose Ramirez Mora — Staff Engineer · product and platform
+# Jose Ramirez Mora — Staff Software Engineer
 
 > Résumé of a software engineer, published for both humans and AI agents.
 > Structured source data lives at /resume.json and a printable PDF at
@@ -9,7 +9,7 @@
 - PDF: https://joanrm20.me/jose_ramirez_cv.pdf
 
 ---
-> Staff engineer with 15+ years who owns product surfaces end to end and builds the platforms other teams depend on: frontend architecture, design systems, data access and release tooling. At Personio and DAZN I built design-system components and integration patterns that 4+ teams adopted, migrated five applications off a legacy monolith, moved a product domain's data access from legacy REST to the company GraphQL layer (5+ entities, 20+ endpoints retired), and cut p75 LCP 21% in production. Before that I designed a backend-for-frontend service and a logging library that became platform standards, and led full-stack teams for five years.
+> Staff engineer with 15+ years building the platforms product teams depend on: frontend architecture, design systems, data access and developer experience. I work across team boundaries, turning duplicated, hard-to-change systems into shared foundations, from monolith migrations and GraphQL data layers to design systems adopted across multiple teams.
 
 - **Location:** Amsterdam, NL
 - **Email:** jo.chicho@gmail.com
@@ -24,9 +24,9 @@
 HR platform for SMEs.
 
 - Migrated my domain's data access off legacy REST onto the company-wide GraphQL layer: 5+ entities, 20+ endpoints retired, done incrementally alongside feature work with no dedicated project. Ended the dual data-access pattern that was driving architectural drift.
-- Cut p75 LCP 21% in real-user monitoring across high-traffic surfaces by eliminating unused JavaScript and redrawing bundle boundaries.
-- Defined and own the frontend integration model for company-wide groups management; shipped the first production use case to all customers; the pattern is now reused across 4+ product domains.
-- Driving the connection of design-system components directly to product-domain data sources, so teams reuse one integration instead of re-wiring it: less duplication, stale API usage and UX drift.
+- Defined and own the frontend integration model for company-wide group management; shipped the first production use case to all customers; the pattern is now reused across 4+ product domains.
+- Leading and building data-connected design-system components that give product teams one consistent, ready-to-use implementation: less duplication, stale API usage and UX drift.
+- Cut p75 LCP by 21% in real-user monitoring across high-traffic surfaces by eliminating unused JavaScript and redrawing bundle boundaries.
 
 ### Lead Frontend Engineer · Personio
 *Nov 2023 — Oct 2025 · Amsterdam, NL*
