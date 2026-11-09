@@ -6,8 +6,8 @@
     "image": "https://avatars.githubusercontent.com/u/4033088?v=4",
     "email": "jo.chicho@gmail.com",
     "url": "https://joanrm20.me",
-    "summary": "Staff engineer with 15+ years building the platforms product teams depend on: frontend architecture, design systems, data access and developer experience. I work across team boundaries, turning duplicated, hard-to-change systems into shared foundations, from monolith migrations and GraphQL data layers to design systems adopted across multiple teams.",
-    "tagline": "Staff Software Engineer building the platforms product teams ship on — design systems, data access, frontend architecture and developer experience — turning sprawling, hard-to-change products into fast, reliable systems teams enjoy building on.",
+    "summary": "",
+    "tagline": "Staff Software Engineer working on large web products shared by many teams.",
     "location": {
       "city": "Amsterdam",
       "countryCode": "NL"
@@ -39,10 +39,10 @@
       "url": "https://www.personio.com/",
       "startDate": "2025-10-01",
       "highlights": [
-        "Migrated my domain's data access off legacy REST onto the company-wide GraphQL layer: 5+ entities, 20+ endpoints retired, done incrementally alongside feature work with no dedicated project. Ended the dual data-access pattern that was driving architectural drift.",
-        "Defined and own the frontend integration model for company-wide group management, now reused across 4+ product domains.",
-        "Leading and building data-connected design-system components that give product teams one consistent, ready-to-use implementation, reducing duplication, stale API usage and UX drift.",
-        "Cut p75 LCP by 21% in real-user monitoring across high-traffic surfaces by eliminating unused JavaScript and redrawing bundle boundaries."
+        "Removed a recurring source of architectural drift in my domain by moving its data access onto the company GraphQL layer, retiring 20+ legacy REST endpoints across 5+ entities without pausing feature delivery.",
+        "Gave 4+ product domains one shared way to integrate company-wide group management by defining and owning its frontend integration model.",
+        "Led the components my domain provides on top of the design system, giving teams a consistent UX and stable, battle-tested access to our data.",
+        "Cut p75 LCP by 21% on high-traffic surfaces, measured in real-user monitoring, by removing unused JavaScript and redrawing bundle boundaries."
       ]
     },
     {
@@ -54,10 +54,10 @@
       "startDate": "2023-11-01",
       "endDate": "2025-10-01",
       "highlights": [
-        "Led migration of 5+ applications off the legacy frontend monolith onto the modular stack, moving the domain from a slow, debt-accumulating codebase to one where features ship reliably.",
-        "Owned frontend delivery of the central UI rebrand for my domain: 12+ stakeholders coordinated, a full-domain release with parallel UI to guarantee parity at launch.",
-        "Designed reusable geolocation and mapping infrastructure (location services and UI components) used by multiple product teams without duplicating third-party integrations.",
-        "Established a recurring frontend architecture forum to align teams on shared decisions and reduce implementation drift."
+        "Unblocked feature development for 5+ frontend applications by leading their migration off a legacy monolith, where changes had become slow, risky and in some cases impractical.",
+        "Delivered the company-wide UI rebrand for my domain with full parity at launch, coordinating 12+ stakeholders and running a parallel-UI release.",
+        "Let multiple product teams ship location-based features without each integrating third-party services, by designing shared geolocation and mapping infrastructure.",
+        "Established a recurring frontend architecture forum that teams use to align on shared decisions."
       ]
     },
     {
@@ -69,10 +69,10 @@
       "startDate": "2022-04-01",
       "endDate": "2023-10-31",
       "highlights": [
-        "Designed and built governance tooling for the headless CMS architecture, letting multiple teams create and manage content models with consistent validation and version control.",
-        "Drove Design System adoption across 3+ frontend teams through guidance and code review, improving brand consistency and accessibility compliance and reducing the time each team spent building UI.",
-        "Drove Design System adoption across 3+ frontend teams through guidance and code review: brand consistency, accessibility compliance, less per-team UI time.",
-        "Optimized CI for a large monorepo, making build feedback more reliable, and standardized automated release workflows for cross-team libraries, cutting manual publishing errors and version drift."
+        "Gave multiple teams consistent validation and version control for content models by designing and building governance tooling for the headless CMS.",
+        "Decoupled landing-page layout from frontend release cycles by leading the move to Server-Driven UI on Next.js.",
+        "Improved brand consistency and accessibility and reduced UI build time across 3+ frontend teams by driving design-system adoption through guidance and code review.",
+        "Made CI feedback more reliable for a large monorepo, and cut manual publishing errors and version drift by standardizing automated release workflows for cross-team libraries."
       ]
     },
     {
@@ -84,8 +84,8 @@
       "startDate": "2021-05-01",
       "endDate": "2022-03-01",
       "highlights": [
-        "Led core design-system components and design tokens, establishing atomic component patterns adopted across web applications; standardized token naming.",
-        "Built shared internationalization utilities (dates, times, currencies) used across product surfaces.",
+        "Established the atomic component patterns adopted across DAZN's web applications by leading core design-system components and design tokens, including token naming standards.",
+        "Gave product surfaces one consistent way to format dates, times and currencies by building shared internationalization utilities.",
         "Presented architecture proposals to the frontend guild and technical council."
       ]
     },
@@ -99,9 +99,9 @@
       "endDate": "2021-04-01",
       "summary": "",
       "highlights": [
-        "Aligned frontend architecture across 4+ product teams, consolidating common patterns into shared libraries and cutting duplicated implementation.",
-        "Technically led a product team through development cycles; mentored engineers inside and outside the company.",
-        "Performance guild member, shaping the organisation's frontend strategy."
+        "Reduced duplicated implementation across 4+ product teams by aligning their frontend architecture and consolidating common patterns into shared libraries.",
+        "Technically led a product team through development cycles and mentored engineers inside and outside the company.",
+        "Performance guild member, contributing to the organisation's frontend strategy."
       ]
     },
     {
@@ -114,8 +114,8 @@
       "endDate": "2019-06-01",
       "summary": "",
       "highlights": [
-        "Designed the Node.js backend-for-frontend service that became the standard adopted across the platform.",
-        "Created the shared server- and client-side logging library that aligned logging standards company-wide."
+        "Designed the Node.js backend-for-frontend service that became the platform-wide standard.",
+        "Aligned logging standards company-wide by creating the shared server- and client-side logging library."
       ]
     },
     {
@@ -128,7 +128,7 @@
       "endDate": "2019-03-01",
       "summary": "",
       "highlights": [
-        "Set up frontend observability metrics and maintained the observability services written in Go; product team on cross-sell products."
+        "Set up frontend observability metrics and maintained the observability services written in Go, while working in the product team for cross-sell products."
       ]
     },
     {
@@ -231,14 +231,6 @@
         "Usability",
         "Accessibility",
         "Performance"
-      ]
-    },
-    {
-      "name": "Media",
-      "keywords": [
-        "Music",
-        "Movies",
-        "Anime"
       ]
     }
   ],
