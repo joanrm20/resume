@@ -24,8 +24,8 @@
 HR platform for SMEs.
 
 - Migrated my domain's data access off legacy REST onto the company-wide GraphQL layer: 5+ entities, 20+ endpoints retired, done incrementally alongside feature work with no dedicated project. Ended the dual data-access pattern that was driving architectural drift.
-- Defined and own the frontend integration model for company-wide group management; shipped the first production use case to all customers; the pattern is now reused across 4+ product domains.
-- Leading and building data-connected design-system components that give product teams one consistent, ready-to-use implementation: less duplication, stale API usage and UX drift.
+- Defined and own the frontend integration model for company-wide group management, now reused across 4+ product domains.
+- Leading and building data-connected design-system components that give product teams one consistent, ready-to-use implementation, reducing duplication, stale API usage and UX drift.
 - Cut p75 LCP by 21% in real-user monitoring across high-traffic surfaces by eliminating unused JavaScript and redrawing bundle boundaries.
 
 ### Lead Frontend Engineer · Personio
@@ -35,14 +35,14 @@ HR platform for SMEs.
 - Led migration of 5+ applications off the legacy frontend monolith onto the modular stack, moving the domain from a slow, debt-accumulating codebase to one where features ship reliably.
 - Owned frontend delivery of the central UI rebrand for my domain: 12+ stakeholders coordinated, a full-domain release with parallel UI to guarantee parity at launch.
 - Designed reusable geolocation and mapping infrastructure (location services and UI components) used by multiple product teams without duplicating third-party integrations.
-- Established the recurring frontend architecture forum for cross-team alignment and less implementation drift.
+- Established a recurring frontend architecture forum to align teams on shared decisions and reduce implementation drift.
 
 ### Staff Frontend Engineer · DAZN
 *Apr 2022 — Oct 2023 · Amsterdam, NL*
 Global sports streaming.
 
 - Designed and built governance tooling for the headless CMS architecture, letting multiple teams create and manage content models with consistent validation and version control.
-- Drove the landing-pages micro-frontend toward Server-Driven UI on Next.js, decoupling layout control from frontend release cycles.
+- Drove Design System adoption across 3+ frontend teams through guidance and code review, improving brand consistency and accessibility compliance and reducing the time each team spent building UI.
 - Drove Design System adoption across 3+ frontend teams through guidance and code review: brand consistency, accessibility compliance, less per-team UI time.
 - Optimized CI for a large monorepo, making build feedback more reliable, and standardized automated release workflows for cross-team libraries, cutting manual publishing errors and version drift.
 
